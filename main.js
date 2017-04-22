@@ -20,4 +20,8 @@
 
     console.log(sum);
 
-    // += means sum = sum + theArray[i]; 
+    // += means sum = sum + theArray[i];
+
+    // 2. IS UNIQUE: Implement an algorithm to determine if a string has all unique characters.
+    // Bonus: What is you cannot use additional data structures?
+    // Hints: #44, #117, #132 
