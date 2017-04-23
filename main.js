@@ -61,6 +61,44 @@
     // Solution 1: Sort the strings and then compare them.
     // Solution 2: Check if the two strings have identical character counts
     // Iterate through the code and count how many times each character appears
-    // Then compare the two arrays 
+    // Then compare the two arrays
 
     // Permutation definition: Two words with the same character count
+
+
+// Question 4: URLify
+// Write a method to replace all spaces in a string with '%20'.
+//  You may assume that the string has sufficient space at the end to hold the additional characters,
+//  and that you are given the "true" length of the string.
+
+Input: "Mr John Smith    ", 13
+Output: "Mr%20John%20Smith"
+
+// My solution; This only replaces the first white space and not all of the white spaces //
+var theString = "Mr John Smith    "
+the.String.replace(" ", "%20");
+
+
+module.exports = Strings_1_3 = (function() {
+  return {
+    // Generate URL freindly strings of a specified length
+    // Solution #3 from the book.
+    // @param {String} s - Standard string with potential trailing whitespace
+    // @param {Number} l - The "true" length of the string
+    // @retuns {String} - A URL freindly string of the specified length
+    URLify: function(s, l) {
+      var newString = '';
+      for (var i = 0; i < l; i++) {
+        if (s.charAt(i) === ' '){
+          newString += '%20';
+        }else{
+          newString += s.charAt(i);
+        }
+      }
+      return newString;
+    }
+  };
+}());
+
+
+// You can use the indexOf method to locate the empty spaces.
