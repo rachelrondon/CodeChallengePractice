@@ -44,3 +44,23 @@
 
     // CharAt()
     // This returns the specified character from a string
+
+
+  // Question 3: Check Permutation
+  // Given two strings, write a method to decide if one is a permutation of the other
+  // Hints: #1, #84, #122, #131
+
+  // Permutation : A rearrangement of the elements of an ordered list
+  // Two strings that are permutations should have the same characters; but in different orders.
+
+    // Questions to ask the interviewer:
+      // 1. Is the permutation case sensitive.
+            //is God a permutation of dog?
+      // 2. Is white space significant ?
+
+    // Solution 1: Sort the strings and then compare them.
+    // Solution 2: Check if the two strings have identical character counts
+    // Iterate through the code and count how many times each character appears
+    // Then compare the two arrays 
+
+    // Permutation definition: Two words with the same character count
