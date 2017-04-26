@@ -102,3 +102,44 @@ module.exports = Strings_1_3 = (function() {
 
 
 // You can use the indexOf method to locate the empty spaces.
+
+
+// Question 5: One Away
+// There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character.
+// Given two strings, write a function to check if they are one edit(or zero edits away);
+
+// Solution:
+
+function isOneOrLessAway(str1, str2) {
+  // First we will check to see if the lengths differ more than 1.
+  // If the lengths of the strings differ more than one than is has to be false
+  if (Math.abs(str1.length - str2.length) > 1) {
+    return false;
+  }
+
+  // Here isEdited is defined as false
+  let isEdited = false;
+
+  // Here there is an iteration through both strings.
+  for (let i = 0, j = 0; i < str1.length && j < str2.length; ++i, ++j) {
+  // Here there is a check to see if the iterations of the two strings equal each other  
+    if (str1[i] !== str2[j]) {
+      if (isEdited) {
+        // second edit
+        return false;
+      }
+
+      if (str1.length > str2.length) {
+        --j; // decrease j, we are deleting char from str1
+      }
+      else if (str1.length < str2.length) {
+        --i; // decrease i, we are deleting char from str2
+      }
+      isEdited = true;
+    }
+  }
+
+  return true;
+}
+
+isOneOrLessAway("pale", "ple");
