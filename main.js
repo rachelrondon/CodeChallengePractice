@@ -122,7 +122,7 @@ function isOneOrLessAway(str1, str2) {
 
   // Here there is an iteration through both strings.
   for (let i = 0, j = 0; i < str1.length && j < str2.length; ++i, ++j) {
-  // Here there is a check to see if the iterations of the two strings equal each other  
+  // Here there is a check to see if the iterations of the two strings equal each other
     if (str1[i] !== str2[j]) {
       if (isEdited) {
         // second edit
@@ -143,3 +143,86 @@ function isOneOrLessAway(str1, str2) {
 }
 
 isOneOrLessAway("pale", "ple");
+
+
+// Question 6:
+// Implement a method to perform a basic string compression using the counts of repeated characters.
+
+// For example, the string aabcccccaaa will become a2b1c5a3.
+// If the "compressed" string would not become smaller than the original string,
+// your method should return the original string
+// You can assume the string has only uppercase and lowercase letters(a - z)
+// Hints #92
+// Hints #110
+
+// Hint 92: Do the easy thing first. Compress the string, the compare the lengths.
+
+// Hint 110: Be careful that you are not repeatedly concatenating strings together. This can be very inefficient.
+
+
+// Write a method and returns a smaller string
+// The smaller string will return the count and the character
+// Define the variables count and character
+// Define a counter
+
+
+
+stringCompression function(str) {
+}
+
+
+// Question 7:
+
+// Rotate Matrix:
+// Given an image represented by NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90%. Can you do this in place?
+
+rotateMatrix function(matrix) {
+  // if the input does not equal matrix, or the length of the matrix string is equal to zero, or the length of the matrix string does not equal the length of matrix at index zero then return 'invalid matrix';
+  if (!matrix || matrix.length === 0 || matrix.length !== matrix[0].length) {
+    // return "invalid matrix";
+    return ('invalid matrix');
+  }
+  // If the length of matrix is less than 2 then return the matrix string.
+  if (matrix.length < 2) {
+    return matrix;
+  }
+
+// The variable len as matrix.length - 1
+  let len = matrix.length - 1,
+// One half of the length is determined by dividing the length of the matrix by two
+// Math.floor will only return a full number
+  half = Math.floor(matrix.length / 2);
+
+// Here there is a loop through the x axis
+  for (let i = 0; i < len - (start * 2); ++ i ) {
+    // The start condition is i = 0; the end condition is i is less than len (matrix.length - 1) minus start times two
+    // Every time there is an iteration, i increases by one
+    let y = start,
+    // the variable y is declared as defined as start
+    x = start + i,
+    // x is declared and defined by start + i
+    prev = matrix[y][x];
+    // prev is declared and defined as matrix[y][x];
+
+  // Here is a loop through all four corners
+    for (let j = 0; i < 4; ++j) {
+  // the variable nextY is declared and defined as x
+      let nextY = x,
+  // the variable next is defined as matrix[nextY][nextX]
+      next = matrix[nextY][nextX];
+  // matrix[nextY][nextX] is also defined as prev
+    matrix[nextY][nextX] = prev;
+  // prev is set to the equivalent of next
+    prev = next;
+  // the variable x is defined as nextX
+    x = nextX;
+  // the variable y is defined as nextY
+    y = nextY;
+    }
+  }
+}
+
+// return matrix
+return matrix;
+
+}
