@@ -226,3 +226,152 @@ rotateMatrix function(matrix) {
 return matrix;
 
 }
+
+
+// Code Challenge - Count The Digit
+
+// Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
+// this is an integer
+n (n >= 0)
+// this is a digit
+d (0 <= d <= 9)
+
+
+
+// Square all numbers k (0 <= k <= n) between 0 and n.
+// Count the number of digits d used in the writing of all the K**2.
+
+
+
+
+
+
+// Question: Take a Ten Minute Walk
+// press button = receive an array of one-letter strings representing directions to walk
+// One minute = one block
+// Create a function that will return TRUE if the walk the app gives you will take you exactly ten minutes
+// Return false otherwise.
+
+let array = ['1', '2', '3', '4', '5', '6', '7','8', '9', '10'];
+
+let goForAWalk = function(array) {
+ if (array.length === 10) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
+goForAWalk(array)
+
+// Reverse String
+// To solve a reverse string question, you can use a reverse for loop or the built in JavaScript methods, split, reverse, and join.
+let str = 'Rachel';
+
+let reverse = str.split('').reverse().join('');
+
+reverse(str)
+
+
+// The Supermarket Queue
+// There is a queue for the self-checkout tills at the supermarket.
+// Your task is to write a function to calculate the total time requireed for all the customers to check out!
+// The function has two input variables:
+
+let customers = [1,2,3,4,5,6];
+// Each integer represents a customer and
+
+let n = 2;
+// n equals the number of checkout tills
+// the function should return an integer; the total time required
+
+// defining getSum and reducing the customers down to the sum of the array of integers.
+let getSum = customers.reduce(function(prev, curr) {
+  return prev + curr;
+},0);
+
+// defining groceryStoreLine and passing it getSum and the n
+let groceryStoreLine = function(getSum, n) {
+  return getSum / n;
+}
+
+groceryStoreLine(customers, n)
+
+
+// Length of missing array
+// You get an array of arrays
+// If you sort the arrays by their length, you will see that thier
+// length-values are consecutive
+// But one array is missing
+
+// You have to write a method that return the length of the missing array
+
+let arr = [[1,2],[4,5,1,1], [1], [5,6,7,8,9]]
+
+let sorted = arr.sort();
+
+function getMissingArray(){
+
+}
+
+getMissingArray(arr)
+
+// Technical Questions:
+
+// What are the advantages of using JavaScript?
+//   1. JavaScript is lightweight
+//   JavaScript can be executed within the user's
+//   brower without having to communicate with the server, saving on bandwidth.
+//   2. JavaScript is versatile
+//     JavaScript supports multiple programming paradigms.
+//       - Object-oriented
+//       - Imperative
+//       - Functional programming
+//       - Can be used on both front-end and server-side technologies
+//
+//   3. Sleek Interactivity
+//     - Tasks can be completed within the browser without communicating with the server.
+//     - JavaScript can create a smooth "desktop-like" experience for the end user
+//
+//   4. Rich Interfaces -
+//     Numerous ways that JavaScript can be used to enhance a website/s UI/UX
+//
+//   5. Prototypal Inheritance -
+//     Objects can inherit from other objects
+//     This makes JavaScript simple, powerful, and great for dynamic applications
+//
+//
+//     What are the disadvantages of using JavaScript?
+//
+//
+//   - Explain the difference between classical inheritance and Prototypal inheritance
+//
+//
+//   - What is a RESTful Web Service?
+//   REST stands for Representational State Transer
+//   - this is an architectural style that has largely been adopted
+//   as a best practice for building web and mobile applications
+//   - Designed to be lightweight, easy to maintain, and scalable.
+//   - they are based on HTTP protocol and make explicit use of HTTP methods (GET, POST, PUT, DELETE)
+//   - These are stateless (they do not hold memory)
+//   - Transfer XML/JSON data between the server and the client
+
+
+
+// Coding Question: Check if a string is a Palindrome
+
+function checkPalindrom(str) {
+
+  //.split will split a string into an array of substrings and return a new array
+  // .reverse will reverse the array in place
+  // .join will join all of the elements of an array into a string
+
+  // first we take a sting and split it into an array of substrings.
+  return str == str.split('').reverse().join('');
+  // we are checking to see if the string equals the reverse of the string.
+  // this is very similar to the question about how to reverse a string.
+}
+
+checkPalindrom('madam')
+
+// this will return true
