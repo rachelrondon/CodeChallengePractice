@@ -375,3 +375,127 @@ function checkPalindrom(str) {
 checkPalindrom('madam')
 
 // this will return true
+
+
+// Question: Given a string and a character, find the number of times the character appears in the string.
+
+let theString = '';
+let char = '';
+let count = 0;
+
+let checkCharacter = function(theString, char) {
+  for (let i = 0; i < theString.length; i++) {
+    if (theString[i] === char) {
+      count += 1;
+    }
+  }
+}
+
+checkCharacter('ababa', 'a')
+console.log(count);
+
+
+// Question: Given an array of numbers from 1 - 100;
+// There is exactly one number in the array that is a duplicate.
+// Write a method to find the duplicate number
+
+
+// Question: Find your name in an array and return new array
+
+var text = 'Rachel is in NYC. Rachel lives in Brooklyn. Rachel is 28 years old';
+var myName = 'Rachel';
+var hits = [];
+
+
+let findName = function(text, myName) {
+  for (let i = 0; i < text.length; i++ ) {
+    hits.push(myName);
+  }
+}
+
+findName(myName);
+
+
+// Question: Reverse a string
+
+let theString = 'Apple';
+let newString = '';
+
+let reverseString = function() {
+  for (var i = theString.length - 1; i >= 0; i--) {
+    newString += theString[i];
+   }
+    return newString
+}
+
+reverseString();
+
+
+// Question: Check for Palindrome
+// A Palindrome is a word that is read the same from front to back
+// Example: Madam
+
+function isPalindrome(s) {
+  var s = s.toLowerCase();
+  let arr = [];
+  for (let i = 0; i < arr.length / 2; i += 1) {
+    // compare string values from both ends iterating inwards
+    if (arr[i] !== arr[arr.length - (i + 1)]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isPalindrome('madam')
+
+// Question: Return the largest value of an array
+// I need to work on this code more:
+inputArray = [1,2,3,4,5];
+
+let largestNumber = (inputArray) => {
+  let largest = inputArray[0];
+  inputArray.forEach((d) => {
+    if d > largest {
+      largest = d
+    }
+  })
+  return largest;
+}
+
+
+// Question: Write a function that returns the maximum value of a given array
+
+let arr = [5,7,8,10];
+let max = 0;
+
+function maxValue(arr) {
+
+// Here we are iterating through the array
+  for (let i = 0; i < arr.length; i++) {
+//
+    if (arr[i] > max){
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+maxValue();
+
+// Given an array of numbers and an integer. Find the two values in the array whose sum is equal to the integer.
+let numbers = [1,2,3,4];
+let integer = 5;
+
+findCombo = function (numbers, integer) {
+
+  for (i = 0; i < numbers.length; i++) {
+    for (n = i+1; i < numbers.length; n++) {
+      if (numbers[i] + numbers[n] === integer) {
+        console.log(numbers[i], numbers[n]);
+      }
+    }
+  }
+}
+
+findCombo( [1,2,3,4],5);
