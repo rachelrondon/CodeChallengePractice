@@ -761,8 +761,64 @@ let findLargest = () => {
   // if any of the numbers in the array is greater than array[0], that number is the largest
     if (d > largest) { largest = d }
   })
-// this will return the largest number 
+// this will return the largest number
   console.log(largest)
 }
 
 findLargest(num);
+
+
+// Print a pyramid
+// Write a function called buildPyramid, that given a number creates a pyramid that is that number of rows
+
+function buildPyramid (rows) {
+  // here we are defining what symbol row would look like
+  const symbol = '^';
+  // here we are defining the symbol count to equal one
+  let symbolCount = 1;
+  // here we are deining the spaceCount to equal rows - 1
+  let spaceCount = rows - 1;
+  // here we are defining what the pyramid would look like
+  let pyramid = '';
+
+  for (let i = 0; i < rows; i += 1) {
+    let str = '';
+    for (let j = 0; j < spaceCount; j += 1) {
+      str += ' ';
+    }
+    for (let k = 0; k < symbolCount; k += 1) {
+      str += symbol;
+    }
+    spaceCount -= 1;
+    symbolCount += 2;
+    pyramid += `${str}  \n`;
+  }
+  return pyramid
+}
+
+buildPyramid(4)
+
+
+// Print a chess board
+// Write a function called ChessBoard that creates a string that represents a 8x8 grid using newline characters to seperate lines
+// At each position of the grid there is either a space or # character
+// The character should form a chess board
+
+function chessBoard = () => {
+  const size = 8;
+  let board = '';
+
+  for (let i = 0; i < size; i += 1) {
+    for (let x = 0; x < size; x += 1) {
+      if ((x + y) % 2 === 0) {
+        board += '';
+      } else {
+        board += '#';
+      }
+    }
+    board += '\n';
+  }
+  return board
+}
+
+chessBoard();
