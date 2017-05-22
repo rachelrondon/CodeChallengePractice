@@ -499,3 +499,270 @@ findCombo = function (numbers, integer) {
 }
 
 findCombo( [1,2,3,4],5);
+
+
+// Question: What should the following code output? Explain the behavior?
+
+(function(){
+  var a = b = 3;
+})();
+
+console.log(a);
+console.log(b);
+// This is a IFEE function (Immediately invoked function expression)
+// The scope of var a is only in that function
+// console.log(a) will return undefined, because var a does not exist
+// console.log(b) would return 3
+// this is because a is equal to another variable, which is undefined
+
+// When JavaScript reads var a = b = 3
+// It sees b = 3;
+// then var a = b;
+// b becomes a global variable because anytime you declare a value of a variable that hasn't been declared it is Immediately placed in the global scope
+
+// Question: consider the code below, will they return the same thing? Why or why not?
+
+function foo1()
+{
+  return {
+    bar: 'hello'
+  };
+}
+
+function foo2()
+{
+  return
+  {
+    bar: 'hello'
+  };
+}
+// foo1() returns object {bar: hello},
+// foo2() returns undefined becasue it exits function on line 205 before it gets to object (white spacing matters here)
+
+
+
+// Question: In what order will the numbers 1 - 4 be logged to the console when the code below is executed ? why?
+
+(function() {
+  console.log(1);
+  setTimeout(function(){console.log(2)}, 1000);
+  setTimeout(function(){console.log(3)}, 0);
+  console.log(4);
+})
+
+1
+4
+3
+2
+
+// the console will log 1 and 4 because they do not include a setTimeout
+// then the setTimeout would push the log of 3 into the callback queue and then log 2 after 3
+// because there is a one second timeout those would fire in sequential order after the console.logs finished executing ( and the call stack is cleared )
+
+
+
+// What will be the output when the following code is executed? Explain?
+console.log(false == '0')
+// This will return true; false is loosely equal to 0
+console.log(false === '0')
+// This will return false; False is not strictly equalt to 0
+
+
+// What's the result of executing this code and why?
+
+function test() {
+  console.log(a);
+  console.log(foo());
+
+  var a = 1;
+  function foo() {
+    return 2;
+  }
+}
+
+test();
+
+// the console will log 'undefined, 2' because the scope of var a is below the console.log and then the function would run foo() which returns 2
+
+// this is a hoisting problem - the function foo() gets hoised. console.log(a) is undefined but not reference error
+// Undefined means it's been declared but has no value, reference error means there is no variable
+// Variables are hoisted below functions.
+
+
+// Question: What is the output of the following code?
+
+  // I need to look into this further ....
+  var a = {},
+      b = {key:'b'},
+      c = {key: 'c'};
+
+    a[b] = 123;
+    a[c] = 456;
+
+    console.log(a[b]);
+
+
+  // Write a function to deliver the expected output:
+  // input: [1,2,3,4,5]
+  // output: [1,2,3,4,5,1,2,3,4,5]
+
+  let array = [1,2,3,4,5]
+  let newArray = []
+
+  let duplicate = function() {
+    for (let i = 0; i < array.length; i++) {
+      newArray.push(array[i]);
+    }
+    for (let j = 0; j < array.length; j++) {
+      newArray.push(array[j]);
+    }
+  }
+
+  duplicate();
+  console.log(newArray);
+
+// Question: Write a function that accepts a single parameter - array of strings
+// the function returns array of numbers where number is length of the corresponding string
+
+let words = ["hello", "what", "is", "up", "dude"];
+
+let countTheWords = function() {
+  words.map(function(word){
+    console.log(word.length);
+  })
+}
+
+countTheWords(words);
+
+// Here is another option without the map helper function
+
+let words = ["hello", "what", "is", "up", "dude"]
+
+let lengthOfWords = []
+
+let lengths = function(words) {
+  for (let i = 0; i < words.length; i++) {
+    lengthOfWords.push(words[i].length);
+  }
+  console.log(lengthOfWords);
+}
+
+lengths(words);
+
+// Question: How to reverse an array of words
+
+let sentence = '';
+
+let wordReverse = function(sentence) {
+  console.log(sentence.split('').reverse().join(''));
+}
+
+wordReverse('Reverse this message');
+
+// Question: Write a function 'clock' that takes two integers, 'hour' and 'minute'
+// the function should calculate the two angles in degrees between the **hour hand** and ** minute hand ** on a twelve house analog clock face
+
+// let hour = 0;
+// let minute = 0;
+//
+// let clock = (hour, minute) => {
+//   hour = parseFloat(hour);
+//   minute = parseFloat(minute);
+//
+//   if (hour < 1 || hour > 12 || min < 0 || min > 59) {
+//     console.log('Out of range');
+//   } else {
+//     let minPosition = (min / 60) * 360;
+//     let hourPosition = (hour / 12) * 360 + (360 / 12) * (min / 60);
+//     let angle = Math.abs(hourPosition = minPosition);
+//
+//     return [angle, 360 - angle];
+//   }
+// };
+//
+// clock();
+
+
+// Question: Print an array
+
+var theArray = ['Rachel', 'Sarah', 'Rebecca'];
+
+let printArray = () => {
+  for (let i = 0; i < theArray.length; i++) {
+    console.log(theArray[i]);
+  }
+}
+
+printArray();
+
+
+// Question: reverse a string
+
+// this is how you reverse a string with a reverse for loop
+let theString = 'Rachel';
+
+let reverseString = () => {
+  for (let i = theString.length - 1; i >= 0; i--) {
+    console.log(theString[i]);
+  }
+}
+
+reverseString()
+
+// this is how you reverse a string with built in JavaScript methods:
+
+let theString = 'Rachel';
+
+let reverseString = () => {
+  console.log(theString.split('').reverse().join(''));
+  }
+
+reverseString();
+
+
+// What a function to check if a string is a Palindrome
+
+let thePalindrome = "madam";
+
+let checkPalindrom = () => {
+  for (let i = 0; i < thePalindrome.length / 2; i += 1) {
+    if (thePalindrome[i] !== thePalindrome[thePalindrome.length - (i + 1)]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+checkPalindrom();
+
+// This is how to solve the problem with the built in JavaScript functions
+
+let thePalindrome = 'madam';
+
+let checkPalindrom = () => {
+  if (thePalindrome === thePalindrome.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+checkPalindrom()
+
+// Find the largest number in an array
+
+let num = [1,2,4]
+
+let findLargest = () => {
+  // defining largest as the index of 0 for the array
+  let largest = num[0]
+  // Using the JavaScript helper method forEach
+  num.forEach((d) => {
+  // if any of the numbers in the array is greater than array[0], that number is the largest
+    if (d > largest) { largest = d }
+  })
+// this will return the largest number 
+  console.log(largest)
+}
+
+findLargest(num);
