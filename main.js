@@ -822,3 +822,201 @@ function chessBoard = () => {
 }
 
 chessBoard();
+
+// Question: Phone book
+// Write a function called 'phoneBook' that given two parameters,
+// the first being an array of hashes containing n number of names and phone numbers
+// and the second being an array of friends names
+// will then assemble a phone book that maps the 'friends' array of names to their respective phone numbers
+// if they are found in the first array
+
+// Each found entry will print the associated entry from your phone book on a new line in the form name = phoneNumber
+// If an entry is not found, print Not Found instead
+
+
+let arrayOne = [{sam: 9494949494}, {tom: 2020202020}, {harry: 9393939393}]
+
+let arrayTwo = ['sam', 'ed', 'harry']
+
+phoneBook function(arrayOne, arrayTwo) {
+  for (let i = 0; i < arrayOne.length; i++) {
+  } for (let j = 0; j < arrayTwo.length; j++) {
+    if (arrayTwo[j] === arrayOne[i]) {
+      console.log(arrayOne);
+    } else {
+      console.log('Not found')
+    }
+  }
+}
+
+phoneBook(arrayOne, arrayTwo)
+
+// This solution is not correct
+
+function phoneBook(input, mapped) {
+  const contacts = [];
+  const hash = [];
+  const inputLen = input.length - 1;
+
+
+  for (let i = 0; i <= inputLen; i += 1) {
+    const contact = Object.keys(input[i]);
+    hash[contact[0]] = input[i][contact];
+  }
+  for (let i = 0; i <= inputLen; i += 1){
+    let string = '';
+    if (hash[mapped[i]]) {
+      string += `${mapped[i]} = ${hash[mapped[i]]}`;
+    } else {
+      string += 'Not Found';
+    }
+    contacts.push(string);
+  }
+  return contacts.join('\n')
+}
+
+phoneBook([{sam:99912222},{tom:11122222},{harry:12299933}], ['sam','ed','harry'])
+
+
+// Binary Question
+// Write a function called 'binaryCount' that given a base integer, converts it to binary and then finds and prints maximum number of consecutive '1s' in binary
+
+// input: 60 which is 111100 in binary
+// output : 4
+
+function binaryCount(num){
+  const b = Number(num).toString(2);
+  let longest = 0;
+  let count = 0;
+  for (let i = 0; i < b.length; i +- 1) {
+    if (Number(b.charAt(i))) {
+      count += 1;
+    } else {
+      if (count > longest) { longest = count; }
+      count = 0;
+    }
+  }
+  if (count > longest ) { longest = count; }
+  return longest;
+}
+
+binaryCount();
+
+// ???
+
+// Two Sum
+
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+function twoSum(arr, target) {
+  const hash = {};
+  for (let i = 0; i < arr.length; i += 1){
+    const val = arr[i];
+    const complement = target - val;
+    if (hash[complement] !== undefined) {
+      return [val, complement];
+    }
+    hash[val] = i;
+  }
+  return null;
+}
+// Given an array of integers and a target number
+// 9 is the target number
+
+// returns two array integers that add up to that target
+
+
+// Question: Longest Substring with no duplicates
+
+// Write a function called 'lengthOfLongestSubstring' that given a string, returns the length of the longest substring without repeating characters
+// Should only return the length of the longest substring
+
+let string = 'abcdabcd'
+// the output should be 4
+function lengthOfLongestSubstring(){
+  let head = 0;
+  let longest = 0;
+  const hash = {};
+  for (let tail = 0l tail < s.length; tail += 1) {
+    const ch = s[tail];
+    if (hash[ch] !== undefined && hash[ch] >= head) {
+      longest = Math.max(longest, tail - head);
+      head = hash[ch] + 1;
+    }
+    hash[ch] = tail;
+  }
+  longest = Math.max(longest, tail - head);
+  return longest;
+}
+
+lengthOfLongestSubstring();
+
+// Repeatify (using prototypes)
+// Write a function called 'Repeatify' that takes a string and a anumber.
+// The number specifies how many times the string should be repeated
+
+// input => repeatify('hello', 3);
+// output => 'hellohellohello'
+
+function repeatify(string, num){
+  return string.concat(string).concat(string)
+}
+
+repeatify('hello', 3)
+
+// This is a way to manually put all of the string together
+// Now we need to do this in a dynamic way
+
+function repeatify(string, num){
+  return string.repeat(num);
+}
+repeatify('hello', 3)
+
+// The repeat method constructs and returns a new string which contains the specified number of copies of the string on which it was called.
+
+// Here is how to write the function without the repeat method
+
+function repeatify(string, num) {
+  // here we are defining the result as a string
+  let result = '';
+  // here we are defining a for loop.
+  // starting at zero, and ending at less than the number
+  // and adding one as it iterates through.
+  // the result is += string; this means that the result is the combination of all the iterations of the string
+  for (let i = 0; i < num; i++) {
+    result += string;
+  }
+  return result;
+  }
+
+ repeatify('hello', 3)
+
+
+ // Stock Market Profit
+// Write a function called getMaxProfit that takes in an array of stock prices and returns the best profit you could have made from 1 purchase and 1 sale.
+// The prices in the array are in the sequence in which they were purchased and can only be sold after
+
+stockPricesYesterday = [10, 7, 5, 8, 11, 9];
+
+function getMaxProfit(stockPricesYesterday) {
+  if (stockPricesYesterday.length < 2) {
+    throw new Error('Getting a profit requires at least 2 prices');
+  }
+
+  let minPrice = stockPricesYesterday[0];
+  let maxProfit = stockPricesYesterday[1] - stockPricesYesterday[0];
+  for (let i = 1; i < stockPricesYesterday.length; i += 1) {
+    const currentPrice = stockPricesYesterday[i];
+    const potentialProfit = currentPrice - minPrice;
+    maxProfit = Math.max(maxProfit, potentialProfit);
+    minPrice = Math.min(minPrice, currentPrice);
+  }
+  return maxProfit;
+}
+
+getMaxProfit();
+// the output should be 6
+
+// this is the best profit that you can have from one sale.
+// so it is the difference of two of the numbers.
+// 11 - 5 = 6
