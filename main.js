@@ -1020,3 +1020,581 @@ getMaxProfit();
 // this is the best profit that you can have from one sale.
 // so it is the difference of two of the numbers.
 // 11 - 5 = 6
+
+
+// Randomize An Array
+// Write a function, called 'shuffle' that given an array, randomizes the position of the elements and returns the new array
+
+// Question: Print an array
+// Write a function called printArr that will print the items of an array;
+
+let array = ['abcd'];
+
+let printArr = function() {
+  for (let i = 0; i < array.length; i++){
+    console.log(array[i]);
+  }
+}
+
+printArr();
+
+// Question: Reverse a string
+// Write a function called 'reverseString' that will take a string and return the string reversed
+let string = 'rachel';
+
+let reverseString = function() {
+  for (let i = string.length - 1; i >= 0; i--) {
+      console.log(string[i]);
+  }
+}
+
+reverseString();
+
+
+// Question isPalindrome
+// Write a function called isPalindrome that will return 'true' if the given input is a Palindrome and false if it is not
+let string = 'madam';
+
+let isPalindrome = function() {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome(string);
+
+// What is the alternative way to write this???
+
+let string = 'madam';
+let newArray = [];
+
+let isPalindrome = function() {
+ for (let i = string.length - 1; i >= 0; i--) {
+    newArray.push(string[i]);
+    } if (string === newArray.join('')) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+}
+
+isPalindrome();
+
+// I worked through this step by step to see what was happening.
+// I utilized console.log to know that I had to add newArray.join('').
+
+
+// Question: Find the largest number
+// Write a function called 'largestNumber' that will return the largest value from an array
+
+let array = [4,5,6,7];
+// the output should be 7
+
+
+let array = [4,5,6,7];
+
+function largestNumber() {
+  let largest = array[0]
+
+  array.forEach((d) => {
+    if (d > largest) {
+    largest = d;
+    }
+  })
+  return largest;
+}
+
+largestNumber(array);
+
+// Here we are using the forEach helper method to solve the problem.
+
+
+// Function: Print a Pyramid
+// Write a function called 'buildPyramid' that given a number, creates a pyramid that is that number of rows
+
+function makePyramid(rows) {
+  // the symbol is a string that contains the character ^;
+ const symbol = '^';
+// here the symbolCount is defined as 1
+ let symbolCount = 1;
+ // here the spaceCount is defined as the rows - 1
+ let spaceCount = rows - 1;
+ // here the pyramid is defined as a string
+ let pyramid = '';
+ // here there is a for loop that loops through the rows
+ for (let i = 0; i < rows; i += 1){
+ // here str is defined as a string
+ let str = '';
+ // here there is a for loop
+ for (let j = 0; j < spaceCount; j += 1) {
+   str += ' ';
+ }
+ for (let k = 0; k < symbolCount; k += 1) {
+   str += symbol;
+ }
+ spaceCount -= 1;
+ symbolCount += 2;
+ pyramid += `${str} \n`;
+ }
+ return pyramid
+}
+
+makePyramid(4);
+
+
+
+// Question: Find The Largest Number
+// Write a function called 'largestNumber' that will return the largest value from an array
+
+let array = [4,5,6,7,8];
+
+function largestNumber() {
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if (d > largest) {
+      largest = d
+    }
+  })
+  return largest;
+}
+
+largestNumber(array);
+
+// find the largest !! AGAIN!
+
+let array = [10,11,12,13];
+
+function largestNumber() {
+    let largest = array[0];
+
+    array.forEach((d) => {
+      if (d > largest) {
+        largest = d
+      }
+    })
+    return largest;
+}
+
+largestNumber();
+
+
+// Odds an evens
+// Write a function called 'oddsEvens' that given a string, prints its even-indexed and odd-indexed characters as space-separated strings on a single line
+
+let input = 'Hacker';
+
+function oddsEvens() {
+  // here we are defining two string; left and right
+  // we will add the characters to their respective strings
+  let left = '';
+  let right = '';
+  // Here we are looping through the input array
+  for (let i = 0; i < input.length; i += 1) {
+    // if i is even,
+    if (i % 2 === 0) {
+  // add this character to the string declared as left
+      left += input[i];
+    } else {
+  // if i is NOT even, add this character to the string declared as right
+      right += input[i];
+    }
+  }
+  return `${left} ${right}`;
+}
+
+oddsEvens();
+
+// Question: phoneBook
+// Write a function called 'phoneBook' that given two parameters, the first being an array of hashes containing n number of names and phone numbers.
+// The second being an array of friends names will then assemble a phone book that MAPS the 'friends' array of names to their respective phone numbers if they are found in the first array.
+// Each found entry will print the associated entry from your phone book on a new line in the form name=phoneNumber;
+// If the entry is not found, print Not Found;
+let input = [{sam:999343434}, {tom:43343434}, {harry:343443443}]
+
+function phoneBook(input, mapped) {
+  const contacts = [];
+  const hash = {};
+  const inputLen = input.length - 1;
+
+  for (let i = 0; i <= inputLen; i += 1) {
+    const contact = Object.keys(input[i]);
+    hash[contact[0]] = input[i][contact];
+  }
+  for (let i = 0; i <= inputLen; i += 1) {
+    let string = '';
+    if (hash[mapped[i]]) {
+      string += `${mapped[i]} = ${hash[mapped[i]]}`;
+    } else {
+      string += 'Not found';
+    }
+    contacts.push(string);
+  }
+  return contacts.join('\n')
+}
+
+phoneBook();
+
+// Question: Two Sum
+// Write a function called 'twoSum' that given an array of integers and a target number, returns two array integers that add up to the target
+
+// Need to work on this.
+function twoSum(array, target) {
+// Step 1: Write a four loop that loops through the array of integers
+  for (let i = 0; i < array.length; i++) {
+    const hash = {};
+    const val = arr[i];
+    const complement = target - val;
+
+    if (hash[complement] !== undefined) {
+      return [val, complement];
+    }
+    hash[val] = i;
+    }
+    return null;
+  }
+
+twoSum([4,6,7,3], 10);
+// Step 2: Write a second four loop that loops through the array again to grab the second set of numbers
+// Step 3: Write a comparison statement that tests to see if the two integers in the array equal the target number
+
+
+// Question: Randomize An Array
+// Write a function called 'shuffle' that given an array,
+// randomizes the position of the elements and returns the new array
+
+
+// IDK : I need to work on this one
+let array = 'rachel';
+
+function shuffle() {
+  // Here we are defining the length of the array
+ let length = array.length;
+ // Here we are defining the last character in the array
+ let last;
+ // Here we are defining random
+ let random;
+// while length
+ while(length) {
+   // randomize = Math.floor(Math.random() multiplied by the lenth -= 1)
+   random = Math.floor(Math.random() * (length -= 1));
+  // let last =
+   last = array[length];
+   array[length] = array[random];
+   array[random] = last;
+ }
+ return array;
+}
+
+shuffle(array);
+
+
+// Question: Repeatify
+// Write a function called 'repeatify' that takes a string and a number.
+// The number specifies how many times the string should be repeated.
+
+// input = repeatify('hello', 3)
+// output = 'hellohellohello'
+
+
+function repeatify(string) {
+   return string.repeat(3);
+}
+
+repeatify('Bye', 3);
+
+// Solve this question with a for loop!
+
+function repeatify(str, n) {
+  let result = '';
+  // i is less than the number,
+  for (let i = 0; i < n; i++) {
+    result += str;
+  }
+  return result;
+}
+
+repeatify('bye', 3)
+
+// Print an array
+// Write a function that prints an array
+
+function printArray(array) {
+  return array;
+}
+
+printArray('Rachel')
+
+// Reverse a string: write a function that reverses a string
+
+function reverseString(string) {
+    return string.split('').reverse().join('');
+}
+
+reverseString('rachel')
+
+// Reverse a string without the built-in JavaScript methods
+let string = 'Rachel'
+
+function reverseString(string) {
+  let reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+ return reverse;
+}
+
+reverseString('Rachel')
+
+// remember to make a new string to contain the reversed new string after it is reversed
+
+
+// isPalindrome
+// Write a function called isPalindrome;
+// It will return 'true' if the string is a Palindrome and false if it is not
+
+function isPalindrome(string) {
+  // iterating through the string; starting at zero, ending at the length of the string divided by two (the middle of the string); increasing by one each time //
+  for (let i = 0; i < string.length / 2; i++) {
+
+    if (string[i] !== string[string.length - (i + 1)]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isPalindrome('madam');
+
+
+// Question: Repeatify:
+// Write a function called repeatify that takes a string and a number.
+// The number specifies how many times the string should be repeated
+
+function repeatify(string, number) {
+  return string.repeat(3);
+}
+
+repeatify('hello', 3)
+
+
+// Write this a different way:
+
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i+=1 ) {
+    // you use += string instead of the iteration of the string
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+// Question: Find The Largest Number
+// Write a function called 'largestNumber' that will return the largest value from an array
+
+function largestNumber(num) {
+  // largest is defined as the first index in the array
+  // I am comparing all of the numbers in the array to the first index
+  let largest = num[0]
+  // for each number in the array, we are passing d
+  num.forEach((d) => {
+  // if d is greater than largest (num[0]) then largest = d
+  if (d > largest) { largest = d}
+  })
+  // return the largest number in the array
+  return largest
+}
+  // here we are passing the numbers in an array
+largestNumber([4,5,6]);
+
+// Odds and Evens
+// Write a function called 'oddsEvens' that given a string, prints its even-indexed and odd-indexed characters as space-separated strings on a single line
+
+// define the function oddEven that will be passed a string
+function oddEven(string) {
+// first we have to define the two strings that the characters will be pushed into
+  let right = '';
+  let left = '';
+// Next we have to loop through the array to seperate the characters
+
+for (let i = 0; i < string.length; i++) {
+  if (i % 2 === 0) {
+    left += string[i];
+  } else {
+    right += string[i];
+  }
+}
+return `${left} ${right}`;
+}
+
+oddEven('rachel');
+
+
+// Write a function that will print an array
+
+function printArray (array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+
+printArray(["a","b"]);
+
+// Write a function that will reverse a string
+
+function reverseString(string) {
+
+  return string.split('').reverse().join('');
+}
+
+reverseString('Rachel');
+
+// How to reverse a string with a for loop:
+
+let string = 'Rachel';
+
+function reverseString() {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString(string);
+
+// isPalindrome function
+// Write a function that will indicate whether a function is a palindrome or not
+
+let string = 'madam';
+
+// a palindrome is a word that is written the same from front to back
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('madam')
+
+
+// Repeatify
+// Write a function called 'Repeatify' that takes a string and a number
+// The number specifies how many times the string should be repeated
+
+function repeatify(string, number) {
+    return string.repeat(number);
+}
+
+repeatify('rachel', 3)
+
+// How to write this as a for loop?
+
+function repeatify(string, number) {
+  let repeat = '';
+
+  for (let i = 0; i < number; i++) {
+    repeat += string;
+  }
+  return repeat;
+}
+
+repeatify('Rachel', 3);
+
+
+// Question: Find The Largest Number
+// Write a function called 'largestNumber' that will return the largest value from an array
+
+
+function largestNumber(array) {
+  // here I am defining the largest number as the index of zero of the array
+  let largest = array[0];
+  // here I am using the forEach helper method and passing d through the entire array
+  array.forEach((d) => {
+  // here I am comparing d with all of the numbers in the array
+    if (d > larget) { largest = d}
+
+  })
+  // here the largest number will be returned to the console.
+  console.log(largest);
+}
+
+largestNumber([4,5,6,7,8]);
+
+// Odds an evens
+// Write a function called 'oddsEvens' that given a string, prints its even-indexed and odd-indexed characters as space-separated strings on a single line
+
+
+function oddEven(string) {
+
+  let right = '';
+  let left = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      left += string[i];
+    } else {
+      right += string[i];
+    }
+  }
+  return `${left}, ${right}`
+}
+
+oddEven('rachel')
+
+
+
+let input = 'Hacker';
+
+function oddsEvens() {
+  // here we are defining two string; left and right
+  // we will add the characters to their respective strings
+  let left = '';
+  let right = '';
+  // Here we are looping through the input array
+  for (let i = 0; i < input.length; i += 1) {
+    // if i is even,
+    if (i % 2 === 0) {
+  // add this character to the string declared as left
+      left += input[i];
+    } else {
+  // if i is NOT even, add this character to the string declared as right
+      right += input[i];
+    }
+  }
+  return `${left} ${right}`;
+}
+
+oddsEvens();
+
+// 
+
+let input = 'hacker';
+
+function oddsEvens(){
+
+  let left = '';
+  let right = '';
+
+  for (let i = 0; i < input.length; i++) {
+    if (i % 2 === 0) {
+      left += input[i];
+    } else {
+      right += input[i];
+    }
+  }
+  return `${left}, ${right}`
+}
+
+oddsEvens('hacker')
