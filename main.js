@@ -1874,3 +1874,83 @@ function findLargest(array) {
 }
 
 findLargest([4,5,6,7])
+
+// Write a function that prints an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+      return array;
+  }
+}
+
+printArray([4,5,6])
+
+
+// Write a function that will reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+// Write a function that reverses an array with a for loop
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+
+// Write a function that decides if a string is a palindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+      console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+// Write this function with a for loop
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+      console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('madam')
+
+// Repeatify - Write a function that repeats a string for the certain amount of time that was indicated
+
+repeatify function(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello')
+
+// Write this function with a for loop
+
+function repeatify(string, number) {
+  let newString = '';
+  for (let i = 0; i <= number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+repeatify('hello', 3)
