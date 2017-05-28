@@ -1954,3 +1954,187 @@ function repeatify(string, number) {
   return newString;
 }
 repeatify('hello', 3)
+
+
+// Print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray([4,5,6])
+
+
+// Reverse a string
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+function reverseString(string) {
+  let reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+// check if a string is a Palindrom
+
+function isPalindrome(string){
+  if (string === string.split('').reverse().join('')){
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('madam');
+
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--){
+    reverse += string[i];
+  } if (string === reverse){
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('madam')
+
+
+// Write a function that will repeat a string for the amount of time that is specified
+
+
+function repeatify(string, number) {
+  return string.repeat(3);
+}
+
+repeatify('hello', 3)
+
+
+function repeatify(string, number) {
+  let newString = '';
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+// Find the largest number in an array of numbers
+
+function largestNumber(num) {
+  let largest = num[0]
+
+  num.forEach((d) => {
+    if (d > largest) { largest = d}
+  })
+  return largest
+}
+
+largestNumber([4,5,6])
+
+
+// Odds/ Evens
+// Write a function called 'oddsEvens' that given a string, prints its even-indexed and odd-indexed characters as space-separated strings on a single line
+
+
+function oddEven(string) {
+  let right = '';
+  let left = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      right += string[i];
+    } else {
+      left += string[i];
+    }
+  }
+  return `${right}, ${left}`
+}
+
+oddEven('hello')
+
+
+
+// Binary Count
+// Write a function called 'binaryCount' that given a base integer, converts it to binary and then finds and prints the maximum number of consecutive 1's in binary
+// A binary number is represented by 0's and 1's
+// http://www.wikihow.com/Convert-from-Decimal-to-Binary
+// You divide the number by the base number
+// Example: 156 / 2 = 78 ; this will be represented as zero since there is no remainder
+// If there was a remainder then it would be represened by 1
+
+// 156 / 2 = 78; 0
+// 78 / 2 = 39; 0
+// 39 / 2 = 19.5; 1
+// 19 / 2 = 9.5; 1
+// 9 / 2 = 4.5; 1
+// 4 / 2 = 2; 0
+// 2 / 2 = 1; 0
+// 2 / 1 = 0.5; 1
+
+// 156 = 00111001
+
+function binaryCount(num) {
+  // here I am defining b as the number variable that is passed through the function and converting it to a binary number with the toString function
+  const b = Number(num).toString(2)
+  // here I am defining the longest number as 0
+  let longest = 0;
+  // here I am defining count as 0
+  let count = 0;
+  // here I am declaring a for loop that is going through the binary number
+  for (let i = 0; i < b.length; i++) {
+    // the chatAt() method returns the specified character from a string
+    // it will return the specified character from the string
+    if (Number(b.charAt(i))) {
+      count += 1;
+    } else {
+      if (count > longest) { longest = count };
+      count = 0;
+    }
+  }
+  if ( count > longest ) { longest = count }
+  return longest;
+  // The .toString method converts a number to a string
+  // If you put 2 inside of the 2 string method, then the number will show as a binary number
+}
+
+binaryCount(60);
+
+
+
+// Recursive functions
+// A recursive function is a function which either calls itself or is in a potential cycle of function calls
+// As the definition specifies, there are two types of recursive functions
+// http://pages.cs.wisc.edu/~calvin/cs110/RECURSION.html
+
+
+// Reverse a string with recursion
+// substr() method returns the characters in a string beginning at the specified location through the specified number of characters
+// the charAt method returns the specified characters
+// https://medium.freecodecamp.com/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb
+
+
+function reverseString(str) {
+  if (str === "")
+    return "";
+
+  else
+    return reverseString(str.substr(1)) + str.charAt(0);
+}
+
+reverseString('hello');
