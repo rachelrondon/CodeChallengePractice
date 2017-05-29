@@ -2138,3 +2138,231 @@ function reverseString(str) {
 }
 
 reverseString('hello');
+
+
+// write a function that will print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray(['4','5','6'])
+
+// Write a function that will reverse a string
+
+function reverseString(string){
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+
+function reverseString(string) {
+  let reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+// check if a string is a palindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('hello')
+
+//
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+// Repeatify
+// Write a function that will repeat a string the specified amount of time
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 3)
+
+//
+
+function repeatify(string, number) {
+  let repeat = '';
+  for (let i = 0; i < number; i++) {
+    repeat += string;
+  }
+  return repeat;
+}
+
+repeatify('hello', 3)
+
+// Find the largest number in an array
+
+function largestNumber(array) {
+  let largest = 0;
+
+  array.forEach((d) => {
+    if (d > largest) {largest = d}
+  })
+  return largest;
+}
+
+largestNumber([4,5,6])
+
+
+// Odds/Evens Function
+function oddEven(string) {
+  let left = '';
+  let right = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      left += string[i];
+    } else {
+      right += string[i];
+    }
+  }
+  return `${left}, ${right}`;
+}
+
+oddEven('hello')
+
+
+// print a string
+
+function printString(string){
+  for (let i = 0; i < string.length; i++) {
+    return string;
+  }
+}
+
+printString('hello')
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+
+//
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+
+// check if a string is a palindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return ('true');
+  } else {
+    return ('false');
+  }
+}
+
+isPalindrome('hello')
+
+//
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(3);
+}
+
+repeatify('hello', 3)
+
+
+//
+
+function repeatify(string, number) {
+  let repeat = '';
+
+  for (let i = 0; i < number; i++) {
+    repeat += string;
+  }
+}
+
+repeatify('hello', 3)
+
+
+// find the largest number
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  array.map((d) => {
+    if (d > largest) {largest = d}
+  })
+  return largest;
+}
+
+findLargestNumber([4,5,6,7])
+
+
+// odds/evens
+
+function oddEven(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
