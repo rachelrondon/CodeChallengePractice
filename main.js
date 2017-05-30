@@ -2481,3 +2481,151 @@ function oddNumber(string) {
 }
 
 oddNumber('hello')
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+
+printArray([4,5,6])
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+      reverse += string[i];
+  }
+   return reverse;
+}
+
+
+reverseString('hello')
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+//
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+repeatify('hello', 3)
+
+
+//
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+// Find the largest number
+
+function findLargestNumber(array) {
+  // define the largest as the first index in the array [0]
+  let largest = array[0];
+// Here I am passing d throughout the array
+  array.forEach((d) => {
+    if (d > largest) { largest = d }
+  })
+  return largest;
+  }
+
+findLargestNumber([4,5,6,7])
+
+
+// odds/ evens
+
+function oddEven(string) {
+  // here I am defining the odd and even strings
+  let even = '';
+  let odd = '';
+
+  // here I am looping through the array
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
+
+// Binary Count
+// Write a function called binaryCount
+// Given a base integer, convert it to binary and then finds and prints maximum number of consecutive 1's in binary
+
+function binaryCount(num) {
+
+// Here I am converting the base number to a binary number with the toString method
+const b = Number(num).toString(2);
+let longest = 0;
+let count = 0;
+
+for (let i = 0; i < b.length; i += 1) {
+  // the charAt method returns the character at the specified index in a string
+  // this will only return one character
+    if (Number(b.charAt(i))) {
+      count += 1;
+    } else {
+      if (count > longest) { longest = count }
+      count = 0;
+    }
+  }
+  if ( count > longest ) { longest = count }
+  return longest;
+}
+
+binaryCount(60)
+
+// the output is 4 
