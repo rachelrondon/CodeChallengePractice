@@ -2839,12 +2839,18 @@ oddEven('hello')
 // Given an array N integer, can you find the sum of it's elements ?
 
 function findSum(array) {
-  let sum = '';
-
+// I defined the sum as a number
+  let sum = 0;
+// here I am looping through the array and each iteration of the sum is being added to the array
   for (let i = 0; i < array.length; i++) {
       sum += array[i];
   }
+// here the sum of all the numbers in the array is returned
   return sum;
 }
 
-findSum([4,5,6,7])
+findSum([1,2,3])
+
+// how to find the sum of an array
+// you can iterate the array and find the numbers in reach array
+// then you can reduce the numbers in the array?
