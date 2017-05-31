@@ -2858,4 +2858,24 @@ findSum([1,2,3])
 
 // Plus Minus
 // Given an array of integers, calculate which fraction of it's elements are positive, which are negative, and which are zero
-// Print the decimal value of each fraction on a new line 
+// Print the decimal value of each fraction on a new line
+
+function plusMinus(array) {
+  let evenCount = 0;
+  let oddCount = 0;
+  let zeroCount = 0;
+
+for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      evenCount += 1;
+    } else if (i % 2 != 0) {
+      oddCount += 1;
+    } else {
+      zeroCount += 1;
+    }
+  }
+  return `${evenCount}, ${oddCount}, ${zeroCount}`;
+}
+
+plusMinus([4,5,6,0])
+// this code needs to be revised!!! 
