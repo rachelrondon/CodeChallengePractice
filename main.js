@@ -2878,4 +2878,34 @@ for (let i = 0; i < array.length; i++) {
 }
 
 plusMinus([4,5,6,0])
-// this code needs to be revised!!! 
+// this code needs to be revised!!!
+
+function getSum(input){
+  let lines = input.split('');
+
+  let n = parseInt(lines[0]);
+  let arr = lines[1].split('').map(function(s) { return parseInt(s);});
+
+  let even = 0;
+  let odd = 0;
+  let zero = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      even ++;
+    } else if (arr[i] < 0) {
+      odd ++;
+    } else {
+      zero ++;
+    }
+  }
+  console.log(even / n);
+  console.log(odd / n);
+  console.log(zero / n);
+// the parseInt function parses a string argument and returns an integer of the specified radix
+
+}
+
+getSum([4,5,6,0])
+
+.. this code needs to be reviewed!!!!
