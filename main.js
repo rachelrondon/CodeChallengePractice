@@ -2834,3 +2834,17 @@ function oddEven(string) {
 }
 
 oddEven('hello')
+
+// Simple Array Sum
+// Given an array N integer, can you find the sum of it's elements ?
+
+function findSum(array) {
+  let sum = '';
+
+  for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+  }
+  return sum;
+}
+
+findSum([4,5,6,7])
