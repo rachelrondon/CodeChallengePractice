@@ -2854,3 +2854,8 @@ findSum([1,2,3])
 // how to find the sum of an array
 // you can iterate the array and find the numbers in reach array
 // then you can reduce the numbers in the array?
+
+
+// Plus Minus
+// Given an array of integers, calculate which fraction of it's elements are positive, which are negative, and which are zero
+// Print the decimal value of each fraction on a new line 
