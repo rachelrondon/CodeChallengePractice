@@ -2908,4 +2908,121 @@ function getSum(input){
 
 getSum([4,5,6,0])
 
-.. this code needs to be reviewed!!!!
+// revise this code!
+
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray([4,5,6])
+
+
+//
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')){
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 2)
+
+//
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+repeatify('hello', 3)
+
+//
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if ( d > largest ) { largest = d}
+  })
+  }
+  return largest;
+}
+
+findLargestNumber([4,5,6])
+
+// odds/Evens
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if ( i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
+
+// Simple Array Sum
+// Given an array N integer, can you find the sum of it's elements ?
+
+function getSum(array) {
+// here I am defining sum as zero to start
+let sum = 0;
+
+for (let i = 0; i < array.length; i++){
+  sum += array[i];
+}
+return sum;
+}
+
+getSum([4,5,6])
+
+// Birthday Cake Candles
+// n candles on her cake
+// candle i has heighti
+// She can only blow out the tallest candles
+// Given the height1 for every individual candle, find and print the number of candles she can successfully blow out
+
+// need to work on this code 
