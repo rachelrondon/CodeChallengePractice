@@ -2720,3 +2720,117 @@ function oddEven(string) {
 }
 
 oddEven('hello')
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray([4,5,6])
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+function reverseString(string){
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+
+//
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')){
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+//
+
+function isPalindrome(string){
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+//
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 3)
+
+//
+
+function repeatify(string, number) {
+  let repeat = '';
+
+  for (let i = 0; i < number; i++) {
+    repeat += string;
+  }
+  return repeat;
+}
+
+repeatify('hello', 3)
+
+// Find the largest number
+
+function findLargest(array){
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if (d > largest) {largest = d};s
+  })
+  return largest;
+}
+
+findLargest([10,12,14,16,18])
+
+// odds/evens
+
+function oddEven(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
