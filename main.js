@@ -3158,24 +3158,29 @@ findSum([1,2,3])
 
 
 // write a function to check if a number is prime
-
+// define the isPrime function and pass it a number
 function isPrime(num){
+// if the number passed is 2, then the number is prime
   if (num === 2) {
     return true;
   }
+// if the number is greater than 1
   else if(num > 1) {
+// iterate from 2 to less than the number while iterating one number as a time
     for (var i = 2; i < num; i++) {
+// if the number is not divisible by the numbers that are iterated through, then return true
+// then the number is prime
+// prime numbers are only divisible by 1 and themselves
       if (num % i !== 0 ) {
         return true;
+// else if, the number is equal to a number multiplied by itself, then it is not a prime number
       } else if ( num === i * i ){
         return false
+// otherwise return false
       } else {
         return false;
       }
-    };
-  } else {
-    return false;
+    }
   }
-};
-
+}
 isPrime(12)
