@@ -3184,3 +3184,17 @@ function isPrime(num){
   }
 }
 isPrime(12)
+
+
+// camelCase function
+// count the number of substrings within a string
+// Use regular expressions
+
+
+function camelCase(string) {
+
+return string.length - string.replace(/[A-Z]/g, '').length + 1;
+
+}
+
+camelCase('saveChangesInTheEditor');
