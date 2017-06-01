@@ -3198,3 +3198,30 @@ return string.length - string.replace(/[A-Z]/g, '').length + 1;
 }
 
 camelCase('saveChangesInTheEditor');
+
+
+// highest and lowest
+// return the highest and lowest numbers within a string of numbers
+
+function highestLowest(string) {
+  let array = string.split('');
+
+  let highest = array[0];
+  let lowest = array[0];
+
+  array.forEach((h) => {
+    if ( h > highest ) { highest = h }
+  })
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < lowest) {
+      lowest = array[i];
+    }
+  }
+
+  return `${highest}, ${lowest}`
+}
+
+highestLowest('1,2,3,4,5')
+
+// Work on the code for finding the lowest number 
