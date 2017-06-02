@@ -3358,3 +3358,18 @@ function isPrime(num) {
 }
 
 isPrime(4)
+
+//  Multiples of 3 or 5
+
+function solution(number){
+  let found = [];
+
+  for (let i = 3; i < number; i++) {
+    if ( 0 === i % 3 || 0 === i % 5 ) {
+      found.push(i);
+    }
+  }
+  return found.reduce(function(a,b){return a + b;});
+}
+
+console.log(solution(10));
