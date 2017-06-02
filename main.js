@@ -3373,3 +3373,123 @@ function solution(number){
 }
 
 console.log(solution(10));
+
+// Print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array);
+  }
+}
+
+printArray([4,5,6])
+
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+reverseString('hello')
+
+// reverse a string
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+//
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+// find the largest number
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if (d > largest) { largest = d}
+  })
+  return largest;
+}
+
+findLargestNumber([4,5,6])
+
+// odds/Evens
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
+
+// simple array sum
+// Given an array N integer, can you find the sum of it's elements ?
+
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+findSum([4,5,6])
+
+// isPrime
+// check if a number isPrime
+
+function isPrime(num) {
+// first check if the number is equal to 2
+ if (num === 2) {
+// if the number is equal to 2, then the number is prime (return 'true')
+   return true;
+// if the number is not equal to 2, check if the number is greater than 1
+ } else if ( num > 1) {
+  // iterate from 2 to the number
+   for ( var i = 2; i < num; i++) {
+    if (num % i !== 0) {
+  // if the number is not divisible by the other numbers, then it is a prime number
+  // prime numbers are only divisible by 1 and itself
+      return true;
+    } else if ( num === i * i ) {
+      return false;
+    } else {
+      return false; 
+    }
+   }
+ }
+}
+
+isPrime(12)
