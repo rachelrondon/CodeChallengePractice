@@ -3224,4 +3224,137 @@ function highestLowest(string) {
 
 highestLowest('1,2,3,4,5')
 
-// Work on the code for finding the lowest number 
+// Work on the code for finding the lowest number
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray([4,5,6])
+
+
+// reverse an array
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+//
+
+function reverseString(string) {
+  let reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+
+// isPalindrome
+
+function isPalindrome(string) {
+ if (string === string.split('').reverse().join('')) {
+   console.log('true');
+ } else {
+   console.log('false');
+ }
+}
+
+isPalindrome('madam')
+
+
+//
+
+function repeatify(string, number){
+  return string.repeat(3);
+}
+
+repeatify('hello', 3)
+
+
+//
+
+function repeatify(string, number) {
+  let repeat = '';
+
+  for (let i = 0; i < number; i++) {
+    repeat += string;
+  }
+  return repeat;
+}
+
+repeatify('hello', 3)
+
+// find the largestNumber
+
+function largestNumber(array) {
+  let largest = array[0];
+
+array.forEach((d) => {
+  if ( d > largest ) { largest = d }
+  })
+  return largest;
+}
+
+largestNumber([4,5,6])
+
+
+// odds/evens
+
+function oddEven(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`
+}
+
+oddEven('hello')
+
+
+// Simple array sum
+// Given an array N integer, can you find the sum of it's elements ?
+
+function simpleArray(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+simpleArray([1,2,3])
+
+//
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (var i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false
+      } else {
+        return false
+      }
+    }
+  }
+}
+
+isPrime(4)
