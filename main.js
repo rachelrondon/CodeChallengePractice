@@ -3486,10 +3486,159 @@ function isPrime(num) {
     } else if ( num === i * i ) {
       return false;
     } else {
-      return false; 
+      return false;
     }
    }
  }
+}
+
+isPrime(12)
+
+
+// Print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+      return array;
+  }
+}
+
+printArray([4,5,6])
+
+
+// reverse a string
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+
+// isPalindrome
+
+function isPalindrome(string){
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+// isPalindrome
+
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+isPalindrome('racecar')
+
+
+// repeatify
+
+
+function repeatify(string, number) {
+  return string.repeat(3);
+
+}
+
+repeatify('hello', 3)
+
+
+// repeatify
+
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello',3)
+
+// find the largest number
+
+function findLargest(array) {
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if (d > largest) { largest = d}
+  })
+  return largest;
+}
+
+findLargest([4,5,6])
+
+// odds/evens
+
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if ( i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
+
+
+// simple array sum
+// Given an array N integer, can you find the sum of it's elements ?
+
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+ }
+
+findSum([1,2,3])
+
+
+// isPrime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if ( num > 1) {
+    for (let i = 2; i < num; i++)
+    if (num % i !== 0) {
+      return true;
+    } else if (num === i * i) {
+      return false;
+    } else {
+      return false;
+    }
+  }
 }
 
 isPrime(12)
