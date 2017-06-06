@@ -3758,3 +3758,106 @@ function isPrime(num) {
 }
 
 isPrime(12)
+
+
+// Broken sequence
+// You have a sequence of positive number starting with 1 but one number is missing
+// Find the missing number
+// If the sequence is not broken, you should return 0
+// Each sequence always increments by one
+// An invalid sequence (with a non numeric character) must return 1
+// An already complete (or empty sequence) must return 0
+// A broken sequence with more than one number missing should return the lowest missing number
+    // otherwise return the missing number
+
+
+
+// Find the greatest possible difference between two numbers in a set (all unique) of numbers
+// Take the min and max using utility methods
+function findDifference(array) {
+  let max = Math.max(...array);
+  let min = Math.min(...array);
+
+  console.log(max - min);
+}
+
+findDifference([1,2,3])
+
+// This is how you find the largest difference using the built-in JavaScript methods Math.max and Math.min
+// Solve this problem without using built-in JavaScript methods
+
+function findDifference(array) {
+    let max = array[0];
+    let min =
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) { max = array[i]}
+  }
+  return (max - Math.min(...array);
+}
+
+findDifference([1,2,3])
+
+// This is a solution that uses only one built-in JavaScript method
+
+// Third solution: Sort then take the difference of the first and the last numbers
+
+function findDifference(array) {
+  let newArray = array.sort();
+
+  return Math.max(...newArray) - Math.min(...newArray);
+
+}
+
+findDifference([1,2,3])
+
+//
+
+function findDifference(array) {
+  let newArray = array.sort();
+
+  return newArray[2] - newArray[0];
+
+}
+
+findDifference([1,2,3])
+
+
+// Nest two loops to enumerate all possible differences and return the largest one
+
+
+ffunction findDifference(numbers) {
+  let newArray = numbers.sort();
+
+  let largest = newArray[0];
+  let smallest = newArray[0];
+
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] > largest) {
+      largest = newArray[i];
+    } else if (newArray[i] < smallest) {
+      smallest = newArray[i];
+    }
+  }
+  console.log(largest - smallest)
+}
+
+findDifference([2,4,9,2,16,24])
+
+// Find the 'mode' within a list of numbers
+// This is the number that appears the most times
+
+function findMode(string) {
+  let count = [];
+
+  for (let i = 0; i < string.length; i++) {
+    for (let j = i + 1; j < string.length; j++) {
+      if (string[i] === string[j]) {
+        count.push(string[i])
+      }
+    }
+  }
+  return count;
+}
+
+findMode('1,2,3,3')
