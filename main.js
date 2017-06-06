@@ -3908,4 +3908,14 @@ Hash(Rachel) => 3
 // string => hash code => index
 // Chaining - When there is a collision you store them in a linked list
 
-let myHash = new Hash('')
+
+// Write a function called condensed_ranges() that takes an array of input ranges and outputs an array of condensed ranges
+
+function condensed_ranges(array) {
+  // first you would have to sort the array of ranges to get the arrays in order
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
+}
+
+condensed_ranges([(0,1), (3,5), (4,8), (10, 12), (9,10)])
