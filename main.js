@@ -3861,3 +3861,51 @@ function findMode(string) {
 }
 
 findMode('1,2,3,3')
+
+// solve this problem with a hash table
+// A hash table is a data structure that is used to store information
+
+key: Rachel
+value: phone number
+
+// map the key to the value
+// write a hash function
+// it will look at a key and then spit out the index number to state the index in the array to store this information
+// it will take a key value and give us an index number
+
+Hash(key) => index
+Hash(Rachel) => 3
+// everytime Rachel is entered it will give the same index number
+
+// if more than one key has the same index number then it will chain onto that index
+// this is called chaining
+Hash(Rachel) => 3
+// this is how you would find the person within the function
+// if you have chaining then you go down the list to find where it is located
+// there should not be too much chaining going on!
+
+
+// DataStructures
+// Arrays;
+  // We can access each element through the index
+  // The size is fixed
+  // The size is specified when you declare the array
+  // Arrays cannot easily grow
+
+// Hash Tables
+  // An array coupled with a function
+  // The hash function takes data as input and outputs an integer( hash value )
+  // The hash value maps the key to the index in the table
+  // You would use the hash function to know where to store the given key
+  // Use the same hash function to determine where to search for a given key
+  // HashTables can be used to store datas for many types
+  // Collision - the result of two keys hashing to the same index
+  // Pro's/ Con's
+
+
+// key-value lookup
+// store the objects in an array
+// string => hash code => index
+// Chaining - When there is a collision you store them in a linked list
+
+let myHash = new Hash('')
