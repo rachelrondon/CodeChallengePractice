@@ -3826,7 +3826,7 @@ findDifference([1,2,3])
 // Nest two loops to enumerate all possible differences and return the largest one
 
 
-ffunction findDifference(numbers) {
+function findDifference(numbers) {
   let newArray = numbers.sort();
 
   let largest = newArray[0];
@@ -3919,3 +3919,168 @@ function condensed_ranges(array) {
 }
 
 condensed_ranges([(0,1), (3,5), (4,8), (10, 12), (9,10)])
+// work on this code further
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+//
+
+function reverseString(string) {
+  for (let i = string.length - 1; i >= 0; i++) {
+    console.log(string[i]);
+  }
+}
+
+reverseString('hello')
+//
+
+function isPalindrome(string) {
+ if (string === string.split('').reverse().join('')) {
+   console.log('true');
+ } else {
+   console.log('false');
+ }
+}
+isPalindrome('racecar')
+//
+
+function isPalindrome(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  } if (string === reverse) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('racecar')
+
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(3);
+}
+
+repeatify('hello', 3)
+//
+
+// define the repeatify function and pass a string and the amount of time it is repeated
+function repeatify(string, number) {
+// define a new string that the repeated string will be added into
+  let newString = '';
+
+// iterate from zero to less than the number (amount of time the string will be repeated)
+  for (let i = 0; i < number; i++) {
+  // the original string is added to the new string the amount of times from zero to < the number passed
+    newString += string;
+  }
+  // here the new string is returned
+  return newString;
+}
+
+repeatify('hello', 3)
+
+// find the largest number
+
+function findLargest(array) {
+  let largest = array[0];
+
+  array.forEach((d) => {
+    if (d > largest) { largest = d}
+  })
+  return largest;
+}
+
+findLargest([4,5,6])
+
+// odds/evens
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if ( i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEven('hello')
+
+// simple array sum
+
+function simpleArraySum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+simpleArraySum([1,2,3])
+
+// isPrime
+// write a function to check to see if a number is prime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  }
+  else if ( num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if ( num === i * i) {
+        return false
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(12)
+
+// write a function that returns the difference betwwen the smallest and largest numbers within an array
+function findDifference(array) {
+  let newArray = array.sort();
+
+  let largest = newArray[0];
+  let smallest = newArray[0];
+
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] > largest) {
+      largest = newArray[i];
+  } else if (newArray[i] < smallest) {
+    smallest = newArray[i];
+  }
+}
+return largest - smallest;
+}
+
+findDifference([4,5,6])
