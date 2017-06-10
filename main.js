@@ -4415,7 +4415,167 @@ findDifference([2,4,6])
 
 function findSum(array, target) {
 
-
 }
 
 findSum([1,2,3], 4)
+
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  let reverse = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+reverseString('hello')
+
+// isPalindrome
+
+function isPalindrome(string){
+  if (string === string.split('').reverse().join('')) {
+    console.log('true')
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('hello')
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number)
+}
+
+repeatify('hello', 3)
+
+//
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+repeatify('rachel',5)
+
+// find the largest number
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) { largest = array[i]}
+  }
+  return largest;
+}
+
+findLargestNumber([1,2,3])
+
+// odds/evens
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i]
+    } else {
+      odd += string[i]
+    }
+  }
+  return `${even}, ${odd}`
+}
+
+oddEven('hello')
+
+
+// simple array sum
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// isPrime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if ( num === i * i ) {
+        return false
+      } else {
+        return false;
+      }
+    }
+  }
+
+}
+
+isPrime(4)
+
+// Find difference
+// Find the greatest possible difference between two numbers in a set (all unique) of numbers
+
+function findDifference(numbers) {
+  let newArray = numbers.sort();
+
+  let largest = newArray[0];
+  let smallest = newArray[0];
+
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] > largest) {
+      largest = newArray[i];
+    } else if (newArray[i] < smallest) {
+      smallest = newArray[i];
+    }
+  }
+  console.log(largest - smallest)
+}
+
+findDifference([1,2,34,2,1,3])
+
+// twoSum
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+
+function twoSum(numbers, target) {
+    for (let i = 0; i < numbers.length; i++) {
+      for (let j = i + 1; j < numbers.length; j++) {
+        if (numbers[i] + numbers[j] === target) {
+          console.log(`${numbers[i]}, ${numbers[j]}`)
+        }
+      }
+  }
+
+}
+
+twoSum([1,2,3], 4)
