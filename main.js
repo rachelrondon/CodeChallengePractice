@@ -4579,3 +4579,196 @@ function twoSum(numbers, target) {
 }
 
 twoSum([1,2,3], 4)
+
+
+//
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+   return array[i];
+  }
+}
+
+printArray([1,2,3])
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
+}
+
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  for (let i = string.length - 1; i >= 0; i--) {
+    console.log(string[i])
+  }
+}
+
+reverseString('hello')
+
+//
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+//
+
+isPalindrome(string) {
+// a palindrome is a word the spelled the same from the front or back
+ if (string === string.split('').reverse().join('')) {
+   console.log('yes')
+ } else {
+   console.log('false')
+ }
+}
+
+isPalindrome('hello')
+
+// repeatify
+function repeatify(string, number) {
+  return string.repeat(number)
+
+}
+
+repeatify('hello', 4)
+
+// repeatify
+
+// define the repeatify functino and pass it a string and a number
+function repeatify(string, number) {
+// define a new string where the repeated words will be placed into
+  let newString = '';
+
+// define a loop that starts at zero and ends at number - 1
+  for (let i = 0; i < number; i++) {
+// the newString = newString + string
+// the string will be added the number of times from zero - number - 1 to the NewString
+    newString += string
+  }
+// here the newString is returned
+  return newString;
+}
+
+// here the string and the number are passed
+repeatify('hello', 3)
+
+
+// find the largestNumber
+
+function findLargestNumber(array) {
+  let largest = array[0]
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest ) { largest = array[i]}
+  }
+  return largest
+}
+
+findLargestNumber([1,2,3])
+
+// odds/evens
+
+// define the function and pass it a string
+function oddEven(string) {
+// define even as a string
+  let even = '';
+// define odd as a string
+  let odd = '';
+
+// write a for loop that iterates through the entire array
+  for (let i = 0; i < string.length; i++) {
+// if the iteration is divisible by 2
+    if (i % 2 === 0) {
+  // then it will be added to the even string
+      even += string[i]
+    } else {
+// else if, the iteration is odd it will be added to the odd string
+      odd += string[i]
+    }
+  }
+// return even and odd
+  return `${even}, ${odd}`
+}
+
+oddEven('hello')
+
+// simple array function
+// write a function that will find the sum of all items within an array
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// isPrime
+// write a function to determine if a number is prime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i != 0) {
+        return true;
+      } else if ( num === i * i ){
+        return false
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(2)
+
+// findDifference
+// write a function that returns the difference between the smallest and largest numbers within an array
+
+
+function findDifference(array) {
+  let newArray = array.sort();
+
+  let largest = newArray[0];
+  let smallest = newArray[0];
+
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] > largest) {
+      largest = newArray[i];
+    } else if ( newArray[i] < smallest) {
+      smallest = newArray[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([10,12,14])
+
+
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length;i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j])
+      }
+    }
+  }
+}
+
+twoSum([1,2,3],4)
