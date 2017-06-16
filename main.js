@@ -4772,3 +4772,165 @@ function twoSum(array, target) {
 }
 
 twoSum([1,2,3],4)
+
+
+/// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
+}
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  for (let i = string.length; i >= 0; i--) {
+    console.log(string[i])
+  }
+}
+
+reverseString('hello')
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('yes');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('hello')
+
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number)
+}
+
+repeatify('hello', 3)
+
+// how to do this with a for loop
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string[i]
+  }
+ }
+
+repeatify('hello', 3)
+
+// find the largest number
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) { largest = array[i]}
+  }
+  return largest;
+}
+
+findLargestNumber([1,2,7,6,21])
+
+// odds/evens
+
+function oddEven(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if ( i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${odd}, ${even}`;
+}
+
+oddEven('holla!')
+
+// write a function that will find the sum of an array
+
+function findSum(array) {
+  // set the sum at zero
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// Find the greatest possible difference between two numbers in a set (all unique) of numbers
+
+// you do not need to sort the array first.
+// you can just use the array how it is :)
+function findDifference(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i]
+    } else if (array[i] < smallest) {
+      smallest = array[i]
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([50,12,1,4,6])
+
+// twoSum
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j])
+      }
+    }
+   }
+}
+
+twoSum([1,2,4,5,2,1], 9)
+
+// function isPrime
+// A prime number must be a whole number greater than 1
+// A prime number can be divided evenly only be one and itself
+function isPrime(num) {
+  // check if the number is equal to 2 because 2 is a prime number
+  if (num === 2) {
+    return true;
+  // start at greater than 1 becasue a prime number has to be greater than 1
+    } else if ( num > 1 ) {
+      // start at 2 because it was already confirmed that the number is not equal to 2
+      for (let i = 2; i < num; i++) {
+      // if the number is not divisible by any of the numbers from 2 to the number then it is a prime number
+        if ( num % i !== 0) {
+          return true;
+      // else if, the number is equal to an iteration multiplied by an iteration then it is not a prime number. Because prime numbers are only divisible by one and itself. They cannot be the product of two numbers multipled by each other.
+      } else if ( num === i * i ) {
+        return false
+        } else {
+          // for everything else, return false
+          return false;
+        }
+      }
+    }
+  }
+
+isPrime(10)
