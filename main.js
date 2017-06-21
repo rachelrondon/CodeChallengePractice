@@ -5463,3 +5463,7 @@ function veryBigSum(size, array) {
 }
 
 veryBigSum(3, [1,2,3])
+
+
+//https://www.hackerrank.com/challenges/diagonal-difference
+// DiagonalDifference
