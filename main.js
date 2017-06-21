@@ -5313,7 +5313,153 @@ function plusMinus(size, array) {
       positive += array[i];
     } else if ()
   }
-
 }
 
 plusMinus(4, [1,2,0,-1])
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
+}
+
+printArray([1,2,4])
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--){
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('yes')
+  }  else {
+    console.log('no')
+  }
+}
+
+isPalindrome('hello')
+
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 3)
+
+
+//
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  newString;
+}
+
+repeatify('hello', 3)
+
+// find the largestNumber
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if ( array[i] > largest) { largest = array[i]}
+  }
+  return largest;
+}
+
+findLargestNumber([1,2,3])
+
+
+// oddsEvens
+
+function oddsEvens(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddsEvens('hello')
+
+// simple array sum
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// isPrime
+
+function isPrime(num) {
+// if the number equals 2, return true
+// this is because 2 is a prime number
+  if ( num === 2) {
+    return true;
+  }
+// prime numbers are positive numbers which is why I am starting at greater than 1
+  else if ( num > 1) {
+    for (let i = 2; i < num; i++) {
+  // if the number is not divisible by any of the numbers return true
+      if (num % i !== 0) {
+        return true;
+  // a prime number can only be the product of one and itself
+  // therefore if the number is a product of two other numbers multiplied then it cannot be a prime number
+      } else if ( num === i * i ) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(12)
+
+// Very Big Sum
+// You are given an array of integers of size N.
+// You need to print the sum of the elements in the array, keeping in mind that sum of the intergers may be quite large
+
+
+function veryBigSum(size, array) {
+  let sum = 0;
+
+  for (let i = 0; i < size; i++) {
+    sum += array[i]
+  }
+  return sum;
+}
+
+veryBigSum(3, [1,2,3])
