@@ -183,3 +183,169 @@ function twoSum(array, target) {
 }
 
 twoSum([1,2,3,4], 3)
+
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+// check if a string is a palindrome
+// a palindrome is a word that is spelled the same from the front to the back
+
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+//
+
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  } if (string === newString) {
+    console.log('true');
+  }  else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('rachel', 3)
+
+// repeatify
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+repeatify('rachel', 3)
+
+// find the largest number witihn an array of numbers
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) { largest = array[i]}
+  }
+  return largest;
+}
+
+findLargest([1,2,3,4])
+
+
+// odds/evens
+
+function oddEvens(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddsEvens('hello')
+
+// simple array sum
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// find the largest difference between two integers within an array
+
+function findDifference(array) {
+  let smallest = array[0];
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([1,2,3,5])
+
+// twoSum
+
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if ( array[i] + array[j] === target) {
+        console.log(array[i], array[j])
+      }
+    }
+   }
+}
+
+twoSum([1,2,4,3,3], 6)
+// isPrime
+
+function isPrime(num) {
+// since 2 is a prime number, check to see if the number equals 2 first
+  if (num === 2) {
+    return true;
+  } else if ( num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i != 0) {
+        return true;
+      } else if ( num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(7)
