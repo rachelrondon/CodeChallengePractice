@@ -349,3 +349,126 @@ function isPrime(num) {
 }
 
 isPrime(7)
+
+
+// min-max sum
+// Given five positive integers, find the min and max values that can be calculated by summing exactly four of the five integers
+// the print the respecitve minimum and maximum values as a single line of two space-seperated long integers
+
+
+// Sum Consecutives
+// You are given a list/array which contains only integers (positive and negative).
+// Your job is to sum only the numbers that are the same and consecutive
+// The result should be one list
+
+
+function sumConsecutives(array) {
+  let sum = '';
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === array[i] + 1) {
+        console.log(array[j])
+      }
+    }
+  }
+  return sum;
+}
+
+sumConsecutives([1,4,4,4,0,4,3,3,1])
+
+// isPrime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if ( num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i){
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(num)
+
+// this does not work with 21. Need to look into this further.
+
+
+// factorial
+// return a number that is a factorial of the given number
+// this is a good place to use recursion
+
+function factorialize(num) {
+  if (num < 0) {
+    return - 1;
+  } else if (num == 0){
+    return 1;
+  } else {
+    return (num * factorialize(num - 1));
+  }
+}
+factorialize(5)
+
+
+// Fibonacci Sequence
+// Every number after the first two is the sum of the two preceding ones
+
+
+function fibonacci(num) {
+  var a = 1; b = 0; temp;
+
+  while ( num >= 0) {
+    temp = a;
+    a = a + b;
+    b = temp;
+    n --;
+  }
+  return b;
+}
+
+fibonacci(20);
+
+//
+
+function fibonacci(num) {
+  if ( num <= 1) return 1;
+
+  return fibonacci( num - 1) + fibonacci( num - 2);
+}
+
+fibonacci(10)
+
+
+// Write a function to check if the array is sorted
+
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,4])
+
+
+// filter function
+function theFunction(number) {
+  return number < 3;
+}
+
+function filterFunction(array) {
+  return array.filter(theFunction);
+}
+
+filterFunction([1,2,3,4])
+
+
+// reduce function
