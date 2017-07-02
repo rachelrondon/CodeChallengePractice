@@ -419,30 +419,30 @@ factorialize(5)
 // Fibonacci Sequence
 // Every number after the first two is the sum of the two preceding ones
 
-
-function fibonacci(num) {
-  var a = 1; b = 0; temp;
-
-  while ( num >= 0) {
-    temp = a;
-    a = a + b;
-    b = temp;
-    n --;
-  }
-  return b;
-}
-
-fibonacci(20);
+//
+// function fibonacci(num) {
+//   var a = 1; b = 0; temp;
+//
+//   while ( num >= 0) {
+//     temp = a;
+//     a = a + b;
+//     b = temp;
+//     n --;
+//   }
+//   return b;
+// }
+//
+// fibonacci(20);
 
 //
 
-function fibonacci(num) {
-  if ( num <= 1) return 1;
-
-  return fibonacci( num - 1) + fibonacci( num - 2);
-}
-
-fibonacci(10)
+// function fibonacci(num) {
+//   if ( num <= 1) return 1;
+//
+//   return fibonacci( num - 1) + fibonacci( num - 2);
+// }
+//
+// fibonacci(10)
 
 
 // Write a function to check if the array is sorted
@@ -864,4 +864,302 @@ isBalanced('foo { bar { baz }')
 // this returns true
 
 'Rachel Rondon'.includes('r')
-// this returns false 
+// this returns false
+
+
+// function isPrime
+
+
+function isPrime(num) {
+  if ( num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if ( num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(7)
+
+// factorial
+
+// define a function that is passed a number
+function factorialize(num) {
+  // if the number is less than zero, then the factor is -1
+    if (num < 0) {
+      return - 1;
+// if the number is equal to 0, then the factor is 1
+    } else if (num === 0) {
+      return 1;
+// if the number is not negative or 0; then return the number multiplied by factorialize(number - 1)
+    } else {
+      return (num * factorialize(num - 1));
+    }
+}
+factorialize(5)
+
+
+// fibonacci
+// write the fibonacci function with a iteration
+function fibonacci(number) {
+  // define a as 1 and b as 0
+  let [a,b] = [1,0];
+
+// the while loop will loop through the block of code as long as the condition is met
+  while (number-- > 0) {
+    [a,b] = [b + a, a];
+  }
+  return b;
+}
+
+fibonacci(10)
+
+
+// isSorted
+
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,4])
+
+
+// filter method
+
+function newFilter(number){
+  return number < 3
+}
+
+[1,2,3,4].filter(newFilter)
+
+
+// reduce function
+
+let total = [1,2,3].reduce(function(a, b) {
+  return a + b;
+},0)
+
+// reverse a string
+
+function reverse(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverse('hello')
+
+
+// indexOf
+
+'Rachel Rondon'.indexOf('Rondon');
+// this returns 7
+
+'Rachel Rondon'.indexOf('sdfsdfds');
+// this returns -1 because this is not included within the original string
+
+[1,2,3].indexOf(1)
+// this returns 0
+
+[1,2,3].indexOf(4)
+// this returns -1 becuase 4 is not included within the original array
+
+// write a function to check if a string is a palindrome
+// a palindrome is a word that is written the same way from forwards to backwards
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('hello')
+
+// write the palindrome function with a for loop
+
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  } if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('hello')
+
+
+// missing: Write a function to find the missing number within an array of numbers
+
+function findMissing(array) {
+  let n = array.length + 1;
+  let sum = 0;
+  let expectedSum = n * (n + 1) / 2;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return expectedSum - sum;
+}
+
+findMissing([1,2,3,4])
+
+// isUnique
+// takes an array of numbers and returns the unique numbers
+
+// Work on this solution! I was able to grab the duplicate numbers witihn the array
+function isUnique(array) {
+  let dublicateArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === array[i + 1]) {
+      dublicateArray.push(array[i]);
+    }
+  }
+  return dublicateArray;
+}
+
+isUnique([1,1,2,2,3])
+
+// Intersection: Find the intersection of two arrays
+
+function findIntersection(arrayOne, arrayTwo) {
+
+  for (let i = 0; i < arrayOne.length; i++) {
+    for (let j = 0; j < arrayTwo.length; j++) {
+      if (arrayOne[i] === arrayTwo[j]) {
+        console.log(arrayOne[i], arrayTwo[j])
+      }
+    }
+  }
+}
+
+findIntersection([1,5,4,2], [8,91,4,1,3])
+
+
+// permutation
+function permut(string) {
+
+  let character = '';
+
+  if (string.length < 2) {
+    return string;
+  } else if (string.length > 2) {
+    for (let i = 0; i < string.length; i++) {
+      character += string[i];
+    } if (string.indexOf(character) != i) {
+      continue;
+      let remainingString = string.slice(0,i) + string.slice(i + 1, string.length);
+
+      for
+    }
+  }
+}
+
+permut('abc')
+
+
+// isPrime
+
+function isPrime(num) {
+  // 2 is a prime number
+  if (num === 2) {
+    return true;
+  // prime numbers are only positive
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+  }
+ }
+}
+
+isPrime(22);
+
+
+// factorial
+
+// this function uses recursion
+function isFactorial(num) {
+  if (num < 0) {
+    return -1;
+  } else if (num === 0) {
+    return 1;
+  } else {
+    return (num * isFactorial(num - 1));
+    }
+}
+
+isFactorial(1)
+
+
+// fibonacci
+
+function fibonacci(num) {
+  // a is declared and defined as 1
+  // b is declared and defined as 0
+  let [a,b] = [1,0];
+
+// a while loop is written and it will run as long as the condition is met
+  while (num-- > 0) {
+// it is a negative iteration from the number to a number greater than 0
+// a is redefined as b + a
+// b is redefined as a, the number before it
+    [a,b] = [b + a, a];
+  }
+// b is returned
+  return b;
+}
+
+fibonacci(10)
+
+
+// isSorted:
+
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,4])
+
+
+// filter function
+
+function newFilter(num) {
+  return num > 5;
+}
+
+[1,2,3,4,10,12,15,14].filter(newFilter)
+
+
+// reduce function
