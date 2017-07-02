@@ -1161,5 +1161,116 @@ function newFilter(num) {
 
 [1,2,3,4,10,12,15,14].filter(newFilter)
 
-
 // reduce function
+
+let sum = [1,2,3].reduce(function(a,b) {
+  return a + b;
+})
+console.log(sum);
+
+
+let product = [1,2,3].reduce(function(a,b) {
+  return a * b;
+})
+console.log(product)
+
+
+let subtracted = [1,2,3].reduce(function(a,b) {
+  return a - b;
+})
+console.log(subtracted)
+
+let divided = [1,2,3].reduce(function(a,b) {
+  return a / b;
+})
+console.log(divided)
+
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+//
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+
+// indexOf
+
+[1,2,3].indexOf(3);
+
+'Rachel Rondon'.indexOf('Rondon', 0)
+
+
+// isPalindrome
+
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('madam')
+
+
+// missing
+
+function missingNumber(array) {
+  // the value of n is the length of the array + 1
+  let n = array.length + 1;
+  // the value of sum is zero
+  let sum = 0;
+  // the value of the expectedSum is n (length of the array + 1) multiplied by n (the length of the array + 1) + 1 / 2
+  let expectedSum = n * (n + 1) / 2;
+
+// a for loop is then written
+  for (let i = 0; i < array.length; i++) {
+// the sum of all of the integers in the array is calculated
+    sum += array[i]
+  }
+// return the result of the expectedSum minus the sum which will provide the missing integer
+  return expectedSum - sum;
+}
+
+missingNumber([1,2,3,5])
+
+
+// isBalanced
+
+function isBalanced(string) {
+  let count = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === '{') {
+      count += 1;
+    } else if (string[i] === '}') {
+      count += 1;
+    }
+  }
+  if (count % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isBalanced('foo { bar { baz } boo }')
