@@ -703,3 +703,62 @@ function fibIterativeES5(n) {
   }
   return b;
 }
+
+
+// isSorted Function
+
+function isSorted(array) {
+// a for loop is written
+  for (let i = 0; i < array.length; i++) {
+// if an iteration of the array is less than the iteration of the array that is the index below it. Then return false;
+  if (array[i] < array[i - 1]) {
+      return false;
+    }
+  }
+// else, return true;
+  return true;
+}
+
+isSorted([10, 9, 8, 14, 20])
+
+// filter function
+
+function filterFunction(n) {
+  return n <= 5;
+}
+
+[1,2,3,5,10,12].filter(filterFunction);
+
+
+// reduce function
+let total = [0,1,2,3].reduce(function(sum, value) {
+  return sum + vale;
+}, 0)
+
+
+// the reduce function used with addition 
+let array = [1,2,3,4].reduce(function(a,b) {
+  return a + b;
+}, 0)
+
+
+// the reduce function used with multiplication
+let theNumbers = [10,2,3].reduce(function(a,b) {
+  return a * b
+})
+
+console.log(theNumbers)
+
+// the reduce function used with subtraction
+let theNumbers = [10,2,3].reduce(function(a,b) {
+  return a - b
+})
+
+console.log(theNumbers)
+
+// the reduce function used with the concat function
+let theNumbers = [[10],[2],[3]].reduce(function(a,b) {
+  return a.concat(b)
+})
+
+console.log(theNumbers)
