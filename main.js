@@ -736,7 +736,7 @@ let total = [0,1,2,3].reduce(function(sum, value) {
 }, 0)
 
 
-// the reduce function used with addition 
+// the reduce function used with addition
 let array = [1,2,3,4].reduce(function(a,b) {
   return a + b;
 }, 0)
@@ -762,3 +762,106 @@ let theNumbers = [[10],[2],[3]].reduce(function(a,b) {
 })
 
 console.log(theNumbers)
+
+
+// Reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+// indexOf
+
+[1,2,3,4,5].indexOf(5,0)
+
+
+// isPalindrome
+// write a function to check if a string is a palindrome
+
+function isPalindrome(string) {
+   if (string === string.split('').reverse().join('')) {
+     return true;
+   } else {
+     return false;
+   }
+}
+
+isPalindrome('racecar')
+
+
+//
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--)  {
+    newString += string[i];
+    console.log(newString)
+  } if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('madam')
+
+// Missing: Write a function to find the missing number within an array
+
+function findMissing(array) {
+  let n = array.length + 1;
+  // n = 4
+  let sum = 0;
+  // sum = 0
+  let expectedSum = n * (n + 1) / 2;
+  // expectedSum = 4 * (4 + 1) / 2
+  // expectedSum = 10
+
+  // here is a iteration that will provide the sum of the numbers in the array
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  // here the actual sum is subtracted from the expected sum to find the missing number
+  return expectedSum - sum;
+}
+
+findMissing([1,3,4])
+
+// isBalanced
+
+function isBalanced(string) {
+  let count = 0;
+
+for (let i = 0; i < string.length; i++) {
+  if (string[i] === '{') {
+    count += 1;
+  } else if (string[i] === '}') {
+    count += 1;
+  }
+}
+if (count % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+isBalanced('foo { bar { baz }')
+
+// includes
+// return true or false indicating whether tha given number appears in the given sorted array
+
+
+[1,2,3,4].includes(1)
+// this returns true
+
+'Rachel Rondon'.includes('R')
+// this returns true
+
+'Rachel Rondon'.includes('r')
+// this returns false 
