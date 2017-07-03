@@ -663,9 +663,6 @@ function fibIterative(n) {
 
 fibIterative(20)
 
-
-//
-
 // this is written in ES6
 function fibIterative(n) {
   let [a,b] = [1,0];
@@ -1845,9 +1842,7 @@ isBalanced('foo { bar { baz } boo }')
 
 // isUnique
 // Writes a function that takes an array of numbers, and returns the unique numbers.
-
 // this leaves only the unique items within the array.
-let array = [1,2,3,4,4,3];
 
 function isUnique(array) {
 
@@ -1863,7 +1858,7 @@ function isUnique(array) {
   return array;
 }
 
-isUnique(array);
+isUnique([1,2,3,4,4,3,5,5,6,6]);
 // thhis function will work for an endless amount of duplicates :)
 // this function identifies the duplicates within the array and then remoes them from the array
 // this leaves only the unique items within the array.
