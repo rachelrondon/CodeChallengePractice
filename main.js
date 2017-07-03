@@ -1573,3 +1573,297 @@ function twoSum(array, target) {
 
 twoSum([1,2,3,2], 4)
 // this returns 1,3 and 2,2
+
+
+// isPrime
+
+function isPrime(number) {
+  if (number === 2) {
+    return true;
+  } else if (number > 0) {
+    for (let i = 2; i < number; i++) {
+      if (number % i !== 0) {
+        return true;
+      } else if (number === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(26)
+
+
+// factorial
+
+function findFactorial(num) {
+  if (num < 0) {
+    return -1;
+  } else if (num === 0) {
+    return 1;
+  } else {
+    return (num * findFactorial(num - 1));
+  }
+}
+
+findFactorial(6)
+
+
+// factorial
+
+function findFactorial(num) {
+  // start with the given factorials
+  // if the number is negative, then the factorial is -1
+  if (num < 0) {
+    return -1;
+  // if the number is 0, then the factorial is 1
+  } else if (num === 0) {
+    return 1;
+  // else, to find the factorial, multiply the number by the recurssion (findFactorial(number - 1))
+  } else {
+    return (num * findFactorial(num - 1));
+  }
+}
+findFactorial(6)
+// pass the number when the function is called
+
+
+// findFactorial
+
+function findFactorial(num) {
+  if (num < 0) {
+    return -1;
+  } else if (num === 0) {
+    return 1;
+  } else {
+    return (num * findFactorial(num - 1));
+  }
+}
+
+findFactorial(6)
+
+// find factorial
+
+function findFactorial(num) {
+  if (num < 0) {
+    return -1;
+  } else if (num === 0) {
+    return 1;
+  } else {
+    return (num * findFactorial(num - 1));
+  }
+}
+
+findFactorial(6)
+
+// findFactorial
+
+function findFactorial(num) {
+  if (num < 0) {
+    return -1;
+  }  else if (num === 0) {
+    return 1;
+  } else {
+    return (num * findFactorial(num - 1));
+  }
+}
+
+findFactorial(6)
+
+// a factorial is 6!
+// 6 * 5 * 4 * 3 * 2 * 1
+
+
+// Fibonacci
+// the Fibonacci sequence
+// 1,1,2,3,5,8
+// the integer is the product of the two integers written before
+
+function findFibonacci(num) {
+  let [a,b] = [1,0];
+
+  while (n-- > 0) {
+    [a,b] = [b + a, a];
+  }
+  return b;
+}
+
+findFibonacci(10)
+
+
+//
+
+function findFibonacci(num) {
+  // find define a and b
+  let [a,b] = [1,0];
+
+// then a and b are redefined within the while loop
+  while (n-- > 0) {
+    [a,b] = [b + a, a];
+  }
+// request for b to be returned
+  return b;
+}
+
+findFibonacci(10)
+
+//
+function findFibonacci(num) {
+  let [a,b] = [1,0];
+
+  while (n-- > 0) {
+    [a,b] = [b + a, a];
+  }
+  return b;
+}
+findFibonacci(10)
+
+// isSorted
+// check is an array of integers is sorted
+
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i - 1] > array[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,7,6]);
+
+// this will return as false
+
+// filter function
+
+
+function theFilter(num) {
+  return num < 5;
+}
+
+[1,2,3,4,5,10,12].filter(theFilter)
+
+
+function theFilter(string) {
+  return string === 'r';
+}
+
+//
+let names = ['Rachel', 'Sarah', 'Rebecca', 'Jean'];
+
+let theLongestNames = names.filter(function(names){
+  return names.length >= 6;
+})
+
+console.log(theLongestNames)
+
+// reduce function
+
+let numbers = [1,2,3,4,5];
+
+let theReduction = numbers.reduce(function(a,b) {
+  return a + b;
+});
+
+console.log(theReduction);
+
+
+// find the missing integer
+
+function findMissing(array) {
+  let n = array.length + 1;
+  let sum = 0;
+  let expectedSum = n * (n + 1) / 2;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return expectedSum - sum;
+}
+
+findMissing([1,2,3])
+
+//
+
+function findMissing(array) {
+  let n = array.length + 1;
+  let sum = 0;
+  let expectedSum = n * (n + 1) / 2;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return expectedSum - sum;
+}
+
+findMissing([1,2,3])
+
+// with this function, the array has to start at zero and only one integer can be missing
+//
+
+
+function findMissing(array) {
+  // define n as the length of the array + 1
+  let n = array.length + 1;
+  let sum = 0;
+  let expectedSum = n * (n + 1) / 2
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return expectedSum - sum;
+}
+
+findMissing([1,2,3])
+
+// isBalanced
+
+function isBalanced(string) {
+  let count = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === '}') {
+      count += 1;
+    } else if (string[i] === '{') {
+      count += 1;
+    }
+  }
+  console.log(count)
+  // if the number is even, return true;
+  if (count % 2 === 0) {
+    return true;
+  // else, if the number is false, return false
+  } else {
+    return false;
+  }
+}
+
+isBalanced('foo { bar { baz } boo }')
+
+
+// isUnique
+// Writes a function that takes an array of numbers, and returns the unique numbers.
+
+// this leaves only the unique items within the array.
+let array = [1,2,3,4,4,3];
+
+function isUnique(array) {
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] === array[i + 1]) {
+      array.splice(i, 2);
+    } else if (array[j] === array[j + 1]) {
+      array.splice(j, 2);
+    }
+  }
+}
+  return array;
+}
+
+isUnique(array);
+// thhis function will work for an endless amount of duplicates :)
+// this function identifies the duplicates within the array and then remoes them from the array
+// this leaves only the unique items within the array.
