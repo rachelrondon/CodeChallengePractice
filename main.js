@@ -2218,3 +2218,139 @@ function generateGreeting(name) {
 }
 
 generateGreeting('Rachel');
+
+
+// print an array
+
+function printArray(array) {
+  return array;
+}
+
+printArray('hello');
+
+
+// reverse a string
+function reverseString(string) {
+ let newString = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello');
+
+
+// check if a string is a palindrome
+function checkPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+checkPalindrome('racecar')
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 3)
+
+
+// repeatify with a for loop
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+// find the largest number within an array
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+findLargest([10,12,14,16])
+
+
+// odds/evens
+
+function oddEvens(string){
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++){
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${odd}, ${even}`;
+}
+
+oddEvens('hello')
+
+
+// simple array sum
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+}
+  return sum;
+}
+
+findSum([1,2,3]);
+
+
+// findDifference
+
+function findDifference(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([1,2,3,4])
+
+
+// twoSum
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j]);
+      }
+    }
+  }
+}
+
+twoSum([1,2,3,2],4)
