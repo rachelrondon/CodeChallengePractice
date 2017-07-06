@@ -2354,3 +2354,145 @@ function twoSum(array, target) {
 }
 
 twoSum([1,2,3,2],4)
+
+
+// print an array
+
+function printArray(array) {
+  return array;
+}
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+
+// isPalindrome
+// check if a string is a palindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('hello')
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+
+}
+
+repeatify('hello', 3)
+
+
+// repeatify with a for loop
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+// find the largest number
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > larget) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+findLargest('hello')
+
+
+// odd/Evens
+
+function oddEvens(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEvens('hello')
+
+// simple array sum
+
+function arraySum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+arraySum([1,2,3])
+
+// findDifference
+// find the largest difference between the integers in an array
+
+function findLDifference(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([1,2,3,10])
+
+// twoSum
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j])
+      }
+    }
+  }
+}
+
+
+twoSum([1,2,3], 5)
+
+// 
