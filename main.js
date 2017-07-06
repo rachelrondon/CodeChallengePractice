@@ -2495,4 +2495,36 @@ function twoSum(array, target) {
 
 twoSum([1,2,3], 5)
 
-// 
+// isBalanced
+function isBalanced(string) {
+  let count = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === '}') {
+      count += 1;
+    } else if (string[i] === '{') {
+      count += 1;
+    }
+  }
+ return count;
+}
+
+isBalanced('{{}')
+// this function should return false
+
+// isSorted
+// declare an isSorted function and pass it an array
+function isSorted(array) {
+// declare a for loop
+  for (let i = 0; i < array.length; i++) {
+// if an iteration minus 1 is greater than the iteration return false
+// if this is sorted than it cannot happen
+// however, if it is sorted then it can happen
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,4])
