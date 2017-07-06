@@ -1859,6 +1859,362 @@ function isUnique(array) {
 }
 
 isUnique([1,2,3,4,4,3,5,5,6,6]);
+// work on this solution more!
 // thhis function will work for an endless amount of duplicates :)
 // this function identifies the duplicates within the array and then remoes them from the array
 // this leaves only the unique items within the array.
+
+
+// print an array
+
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array[i];
+  }
+}
+
+printArray([1,2,3])
+
+// print an array
+
+function printArray(array) {
+    return array;
+}
+
+printArray([1,2,3])
+
+
+// reverse an array
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello');
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('racecar')
+
+// isPalindrome
+
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  } if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('madam')
+
+// repeatify
+
+function repeatify(string, number) {
+  let newString = '';
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+// find the largest number
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+findLargest([10,12,16,5])
+
+// oddEvens
+
+function oddEvens(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEvens('hello')
+
+// simple array sum
+
+function findSum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+findSum([1,2,3])
+
+// find difference
+
+function findDifference(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([10,24,2])
+
+// twoSum
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j])
+      }
+    }
+  }
+}
+
+twoSum([1,2,3,4],5)
+
+
+// isPrime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 0) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(7)
+
+// factorial
+
+function findFactorial(num) {
+    if (num < 0) {
+      return -1;
+    } else if (num === 0) {
+      return 1;
+    } else {
+      return (num *findFactorial(num - 1));
+    }
+  }
+
+findFactorial(6)
+
+// Fibonacci
+
+function fibIterative(n) {
+  let [a,b] = [1,0];
+  while (n-- > 0) {
+    [a,b] = [b + a, a];
+  }
+  return b;
+}
+
+fibIterative(20)
+
+//
+
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isSorted([1,2,3,4])
+
+// filter function
+
+let names = ['Rachel', 'Sun', 'Sarah', 'Rebecca'];
+
+let smallestNames = names.filter(function(names) {
+  return names.length < 4;
+});
+
+console.log(smallestNames);
+
+// reduce function
+
+let total = [0,1,2,3].reduce(function(sum, value) {
+  return sum + value;
+}, 0)
+
+console.log(total)
+
+// findMissing
+
+function findMissing(array) {
+  let n = array.length + 1;
+  let sum = 0;
+  let expectedSum = n * (n + 1) / 2;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return expectedSum - sum;
+}
+
+findMissing([1,3,4])
+
+
+// isBalanced
+
+function isBalanced(string) {
+  let sum = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === '}') {
+      count += 1;
+    } else if (string[i] === '{') {
+      count += 1;
+    }
+  }
+ if (count % 2 === 0) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
+isBalanced('(foo { bar (baz) [boo] })')
+
+
+// isUnique
+
+function isUnique(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] === array[j]) {
+        array.splice(array[i],2);
+      }
+    }
+  }
+}
+
+isUnique([1,2,2,3,3,4,4])
+
+// write a javascript statement that solves the pythagorean theorem.
+
+function pythagorean(sideA, sideB) {
+  return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+  // this means return the square root of (sideA^2) + (sideB^2);
+}
+
+console.log(pythagorean(4,3))
+
+//Math.sqrt returns the square root of a number
+// Math.pow retursn the base to the exponent power
+
+
+// write a javascript statement that converts weight in pounds(lbs) to kilograms(kg);
+
+function convertWeight(num) {
+  return num / 2.2;
+}
+
+convertWeight(7)
+
+// Given an array, write a JavaScript function that prints 'Rachel Rondon' to the console
+
+let names = ['Rachel', 'Sarah', 'Rebecca'];
+
+console.log(names[0]);
+
+
+// write an if/else statement that checks the value of age.
+// if age is 21 or highter, print 'OK, you can have a drink'.
+// if age is under 21, print 'Get lost kid! We don't serve minors here!!'
+
+function checkID(age) {
+  if (age >= 21) {
+    return 'You can have a drink!'
+  } else if (age < 21) {
+    return 'You are too young to drink!'
+  }
+}
+
+checkID(22)
+
+
+// write a function called multiply that takes 2 numbers as parameters and returns the product of those 2 numbers
+
+function multiply(numOne, numTwo) {
+  return numOne * numTwo;
+}
+
+multiply(10,2)
+
+
+// write a function called maxOfThree that takes 3 numbers as parameters and returns the largest number of the three.
+// Try doing this without using Math.max();
+
+function maxOfThree(numOne, numTwo, numThree) {
+  if (numOne > numTwo && numOne > numThree) {
+    return numOne;
+  } else if (numTwo > numOne && numTwo > numThree) {
+    return numTwo;
+  } else {
+    return numThree;
+  }
+}
+
+maxOfThree(10,14,12);
+
+// write a function called generateGreeting that takes a single string as a parameter (a name) and returns a friendly, customized greeting.
+
+
+function generateGreeting(name) {
+ return `Hello ${name}!`;
+}
+
+generateGreeting('Rachel');
