@@ -2528,3 +2528,10 @@ function isSorted(array) {
 }
 
 isSorted([1,2,3,4])
+
+
+// print an array
+
+function printArray(array) {
+  return array;
+}
