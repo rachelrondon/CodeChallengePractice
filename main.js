@@ -2618,3 +2618,41 @@ console.log(result)
 // Video source: https://www.youtube.com/watch?v=_GQLS2TqX-4
 // every recursion statement needs a base case
 // it needs a base case b/c otherwise it will call itself again and again
+
+
+Regular Expressions:
+// Regular expressions are patterns used to match character combinations in strings.
+// In JavaScript, regular expressions are also objects
+// These patterns are used with the exec and test methods of RegExp
+// and the match, replace, search, and split methods of String
+
+Regular Expression Literal:
+var re = /ab+c/;
+
+Constructor Function of the RegExp object:
+var re = new RegExp('ab+c');
+
+Simple Patterns
+// Simple patterns are constructed of characters for which you want to find a direct match
+var re = /abc/
+// this will find the direct match for "abc".
+// it will not match with "cba" or any other combination of the letters
+
+Special Characters
+// When the search for a match requires something more than a direct match, such as finding one ore more b's or finding white space, the pattern includes special characters
+
+var re = /ab*c/
+// this matches any character combination in which a single "a" is followed by zero or more b's and then immediately followed by "C"
+// *  = zero or more occurrences of the preceding item
+// in the string "cbbabbbbcdebc" this matches "abbbbc";
+
+Special Characters:
+* = 'zero or more occurrences of the preceding item';
+\ = 'a \ that precedes (comes before) a non-special character indicates that the next character is special and is not to be interpreted literally'
+// example: 'b' = lowercase 'b's whereever they occur
+// example: '\b' = forms the special word boundary character
+// '\b' = this matches a position where the previous and next character are the same type
+      // either both must be words, or both must be non-words.
+      // the beginning and end of a string are considered non-words
+
+// Online Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-word-boundary
