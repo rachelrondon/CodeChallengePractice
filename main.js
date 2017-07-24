@@ -2535,3 +2535,86 @@ isSorted([1,2,3,4])
 function printArray(array) {
   return array;
 }
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+
+// isPalindrome
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('hello')
+
+
+/* Recursion in JavaScript */
+var nums = [1,2,3,4];
+var sum = 10;
+
+/* Find the sum with recursion */
+/* Recursion is a function that calls itself */
+
+function sum() {
+  return sum();
+}
+var nums = [1,2,3,4];
+var sum = 10;
+
+/* The function sum is calling itself within itself */
+/*
+1,2,3,4 = 1 + sum(2,3,4) = 1 + 9 = 10
+2,3,4 = 2 + sum(3,4) = 2 + 7
+3,4 = 7 --  this is the base case
+*/
+
+var nums = [1,2,3,4];
+var sum = 10;
+// find the sum with recursion
+
+
+// 1,2,3,4 = 1 + sum(2,3,4) = 10;
+// 2,3,4 = 2 + sum(3,4) = 9;
+// 3,4 = 7  - this is the base case
+
+
+
+
+function sum() {
+  // Array.from converts the arguments into an array
+  var args = Array.from(arguments);
+  // first is defined as the index of 0 in the arguments array
+  var first = args[0];
+  // second is defined as the index of 1 in the arguments array
+  var second = args[1];
+  // this is the base case
+  // if there are only two arguments then add them together
+  if (args.length === 2) {
+    return first + second;
+  }
+  return first + sum.apply(null, args.slice(1));
+  // args.slice(1) - start at the index of 1 in the array
+  // call the function using apply
+}
+
+var result = sum(1,2,3,4);
+console.log(result)
+
+// Video source: https://www.youtube.com/watch?v=_GQLS2TqX-4
+// every recursion statement needs a base case
+// it needs a base case b/c otherwise it will call itself again and again
