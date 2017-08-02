@@ -48,6 +48,7 @@ function repeatify(string, number) {
 
 repeatify('hello', 3)
 
+
 // Find The Largest Number: Write a function that finds the largest integer within an array
 
 function findLargest(array) {
@@ -2656,3 +2657,104 @@ Special Characters:
       // the beginning and end of a string are considered non-words
 
 // Online Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-word-boundary
+
+
+// Print an array
+
+function printArray(array) {
+  return array;
+}
+
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+      newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello');
+
+// isPalindrome
+// check if a string is a palindrome
+// A palindrome is a string that can be spelled the same forwards and backwards
+
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  if (string === newString) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+}
+
+isPalindrome('hello')
+
+// repeatify
+// return a new string that repeats a string the sepcified amount of time
+
+function repeatify(string, number){
+  let newString = '';
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+// Find the Largest Number within an array
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+findLargest([10,12,14,16])
+
+
+// oddEven
+
+function oddEvens(string) {
+  let even = '';
+  let odd = '';
+
+  for (let i = 0; i < string.length; i++) {
+   if (i % 2 === 0) {
+     even += string[i];
+   } else {
+     odd += string[i];
+   }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEvens('hello');
+
+// Simple array sum
+
+function arraySum(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+arraySum([10,12,14]);
