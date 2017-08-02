@@ -2758,3 +2758,264 @@ function arraySum(array) {
 }
 
 arraySum([10,12,14]);
+
+
+// Find the difference between the largest and smallest numbers within an array
+
+function findDifference(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDifference([1,2,3,4])
+
+// twoSum
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+function twoSum(array, target) {
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j]);
+      }
+    }
+  }
+}
+
+twoSum([1,2,2,3], 4);
+
+// isPrime
+// Write a function to check if a number isPrime
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(10);
+
+
+// Default Function Arguments
+function makeAjaxRequest(url) {
+  // if there is no method, the message should be a GET
+  // in both cases, the method should end up as a GET request
+  if (!method) {
+    method = 'GET';
+  }
+
+}
+
+makeAjaxRequest('google.com');
+makeAjaxRequest('google.com', 'GET');
+
+// Here is another way how to write this
+
+function makeAjaxRequest(url, method = 'GET') {
+  return method;
+
+}
+
+makeAjaxRequest('google.com');
+makeAjaxRequest('google.com', 'POST');
+
+
+// More complex Default Function Arguments
+
+// every time a user is created, it has to be passed an id
+function User(id) {
+  this.id = id;
+}
+
+new User(1);
+
+// what is you want a random number to be generated every time you create a user
+
+function generateId() {
+  return Math.random() * 999999;
+}
+
+function createAdminUser(user = new User(generateId())) {
+  user.admin = true;
+
+  return user;
+}
+
+const user = new User(generateId());
+createAdminUser(user);
+
+
+// REST & SPREAD OPERATORS
+// The purpose is to write less code
+
+function addNumbers(numbers) {
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+}
+
+addNumbers([1,2,3,4,5]);
+
+
+// what is you want to sum a bunch of numbers but they are not in an array
+
+// This is the REST operator
+function addNumbers(...numbers) {
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+}
+
+addNumbers(1,2,3,4,5,6,7)
+// Want to capture all of the arguments and put them into a single array
+
+const defaultColors = ['red', 'green'];
+const userFavoriteColors = ['orange', 'yellow'];
+const fallColors = ['fire red', 'fall orange'];
+// You can pass another array to concat and it will create a single array
+
+// Another way to write this..
+
+// the ... is the spread operator
+
+const newArray = [ 'blue', ...fallColors, ...defaultColors, ...userFavoriteColors ];
+
+console.log(newArray);
+
+// You can add in new elements as you add the arrays
+// This is the SPREAD OPERATOR
+
+
+function validateShoppingList(...items) {
+  // if 'milk' is not included within the list of items, add milk to the list of items.
+  // this ensures that milk is always included within the items list
+  if (items.indexOf('milk') < 0) {
+    return [ 'milk', ...items ];
+  }
+
+  return items;
+}
+
+validateShoppingList('oranges', 'bread', 'eggs');
+
+
+// REST OPERATOR
+const MathLibrary = {
+  calculateProduct(...rest) {
+    console.log('Please use the multiply method instead');
+    return this.multiply(...rest);
+  },
+  multiply(a, b) {
+    return a * b;
+  }
+};
+
+function product(a, b, c, d, e) {
+  var numbers = [a,b,c,d,e];
+
+  return numbers.reduce(function(acc, number) {
+    return acc * number;
+  }, 1)
+}
+
+// REST OPERATOR
+// WHEN TO USE THE REST OPERATOR
+//
+// const MathLibrary = {
+//   calculateProduct(a, b) {
+//     return a * b;
+//   }
+//   multiply(a, b) {
+//     return a * b;
+//   }
+// };
+
+const MathLibrary = {
+  calculateProduct(...rest) {
+    console.log('Please use the multiply method instead!')
+    return this.multiply(...rest);
+  },
+  multiply(a, b) {
+    return a * b;
+  }
+};
+
+// Destructuring
+
+var expense = {
+  type: 'Business',
+  amount: '$45 USD'
+};
+//
+
+// ES6
+
+
+const { type } = expense;
+// ES5:var type = expense.type;
+// This is not creating an object. If the {} are on the left-hand-side, it means I want to define a variable type and I want it to be set equal to expense.type.
+const { amount } = expense;
+// ES5: var amount = expense.amount;
+// Here is another way to write it
+// We can only reference this because it is defined above.
+const { type, amount } = expense;
+type;
+amount;
+
+// Another example:
+
+var savedFiled = {
+  extension: '.jpg';
+  name: 'repost',
+  size: 14040
+};
+
+function fileSummary(file) {
+  return `The file ${file.name}.${file.extension} is of size ${file.size}`
+}
+
+fileSummary(savedFiled);
+
+// ES6 is about reducing the amount of repeated code that you have
+
+// Here is another way to write this:
+// de-structure off of our arguments object
+function fileSummary({ name, extension, size }) {
+  return `The file ${name}.${extension} is of size ${size}`;
+}
+
+fileSummary(savedFiled, {color: 'red' });
+
+//
+
+const companies = [
+  'Google',
+  'Facebook',
+  'Uber'
+];
+
+const [ name, name2, name3, name4 ] = companies;
+name;
+name2;
+name3;
+typeof name4; 
