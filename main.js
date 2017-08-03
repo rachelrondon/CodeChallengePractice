@@ -3019,3 +3019,102 @@ name;
 name2;
 name3;
 typeof name4; 
+
+
+// print an array 
+function printArray(array) {
+  return array;
+}
+printArray([1,2,3])
+
+// reverse a string 
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+
+// reverse a string with a for loop 
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString; 
+}
+
+reverseString('hello')
+
+// isPalindrome - check if a string is a palindrome 
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')){
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('madam')
+
+// Check if a string is a palindrome with a for loop 
+function isPalindrome(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  } if (string === newString) {
+    console.log('true');
+  } else {
+    console.log('false')
+  }
+}
+
+isPalindrome('madam')
+
+// repeatify 
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+// Find the largest number 
+// Find the largest number within an array 
+function findLargest(array){
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest; 
+}
+
+findLargest([1,2,3,4])
+
+// OddsEvens 
+
+function oddEvens(str) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      even += str[i];
+    } else {
+      odd += str[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEvens('hello');
