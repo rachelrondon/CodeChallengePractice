@@ -3102,7 +3102,6 @@ function findLargest(array){
 findLargest([1,2,3,4])
 
 // OddsEvens 
-
 function oddEvens(str) {
   let odd = '';
   let even = '';
@@ -3118,3 +3117,73 @@ function oddEvens(str) {
 }
 
 oddEvens('hello');
+
+
+// Simple Array Sum 
+// Find the sum of all of the items in the array 
+// Define a sum and add in each iteration of the array with the for loop
+function findSum(array) {
+  let sum = 0; 
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+findSum([1,2,3,4])
+
+// findDifference 
+// Find the largest difference between the numbers in an array 
+function findDifference(arr) {
+  let largest = arr[0];
+  let smallest = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    } else if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+  return largest - smallest; 
+}
+
+findDifference([1,2,3,4,5])
+
+// Math.random
+function getRandom() {
+  return Math.random()
+}
+
+getRandom();
+
+// Math.random: get a random number between two values 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min; 
+  // return a random number from (10, 9, 8, 7, 6, 5, 4, 3, 2, 1) + 10; 
+  // You add min at the end to make sure that it is witin max and min 
+}
+
+getRandomArbitrary(10,20);
+
+// Math.random: return a random integer between two values 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  // the Math.ceil function returns the smallest integer greater or equal to a given number
+  // Math.ceil rounds up  
+  max = Math.floor(max);
+
+  return Math.floor(Math.random() * (max - min)) + min; 
+  // Math.floor returns the largest integer less than or equal to a given number 
+  // It rounds a number down and returns a whole number 
+  // Math.floor rounds down
+}
+
+getRandomInt(5,10)
+
+// Numbers: All natural numbers (All numbers >= 0) (0,1,2,3,4 ....)
+// Integers: All whole numbers and thier negative counterpart (... -4, -3, -2, -1, 0, 1, 2, 3, 4)
+
+
+// Get a random integer between two values 
