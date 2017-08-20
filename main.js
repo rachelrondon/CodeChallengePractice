@@ -3018,16 +3018,16 @@ const [ name, name2, name3, name4 ] = companies;
 name;
 name2;
 name3;
-typeof name4; 
+typeof name4;
 
 
-// print an array 
+// print an array
 function printArray(array) {
   return array;
 }
 printArray([1,2,3])
 
-// reverse a string 
+// reverse a string
 function reverseString(string) {
   return string.split('').reverse().join('');
 }
@@ -3035,19 +3035,19 @@ function reverseString(string) {
 reverseString('hello')
 
 
-// reverse a string with a for loop 
+// reverse a string with a for loop
 function reverseString(string) {
   let newString = '';
 
   for (let i = string.length - 1; i >= 0; i--) {
     newString += string[i];
   }
-  return newString; 
+  return newString;
 }
 
 reverseString('hello')
 
-// isPalindrome - check if a string is a palindrome 
+// isPalindrome - check if a string is a palindrome
 function isPalindrome(string) {
   if (string === string.split('').reverse().join('')){
     console.log('true');
@@ -3058,7 +3058,7 @@ function isPalindrome(string) {
 
 isPalindrome('madam')
 
-// Check if a string is a palindrome with a for loop 
+// Check if a string is a palindrome with a for loop
 function isPalindrome(string) {
   let newString = '';
 
@@ -3073,7 +3073,7 @@ function isPalindrome(string) {
 
 isPalindrome('madam')
 
-// repeatify 
+// repeatify
 function repeatify(string, number) {
   let newString = '';
 
@@ -3086,8 +3086,8 @@ function repeatify(string, number) {
 repeatify('hello', 3)
 
 
-// Find the largest number 
-// Find the largest number within an array 
+// Find the largest number
+// Find the largest number within an array
 function findLargest(array){
   let largest = array[0];
 
@@ -3096,12 +3096,12 @@ function findLargest(array){
       largest = array[i];
     }
   }
-  return largest; 
+  return largest;
 }
 
 findLargest([1,2,3,4])
 
-// OddsEvens 
+// OddsEvens
 function oddEvens(str) {
   let odd = '';
   let even = '';
@@ -3119,11 +3119,11 @@ function oddEvens(str) {
 oddEvens('hello');
 
 
-// Simple Array Sum 
-// Find the sum of all of the items in the array 
+// Simple Array Sum
+// Find the sum of all of the items in the array
 // Define a sum and add in each iteration of the array with the for loop
 function findSum(array) {
-  let sum = 0; 
+  let sum = 0;
 
   for (let i = 0; i < array.length; i++) {
     sum += array[i];
@@ -3133,8 +3133,8 @@ function findSum(array) {
 
 findSum([1,2,3,4])
 
-// findDifference 
-// Find the largest difference between the numbers in an array 
+// findDifference
+// Find the largest difference between the numbers in an array
 function findDifference(arr) {
   let largest = arr[0];
   let smallest = arr[0];
@@ -3146,7 +3146,7 @@ function findDifference(arr) {
       smallest = arr[i];
     }
   }
-  return largest - smallest; 
+  return largest - smallest;
 }
 
 findDifference([1,2,3,4,5])
@@ -3158,25 +3158,25 @@ function getRandom() {
 
 getRandom();
 
-// Math.random: get a random number between two values 
+// Math.random: get a random number between two values
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min; 
-  // return a random number from (10, 9, 8, 7, 6, 5, 4, 3, 2, 1) + 10; 
-  // You add min at the end to make sure that it is witin max and min 
+  return Math.random() * (max - min) + min;
+  // return a random number from (10, 9, 8, 7, 6, 5, 4, 3, 2, 1) + 10;
+  // You add min at the end to make sure that it is witin max and min
 }
 
 getRandomArbitrary(10,20);
 
-// Math.random: return a random integer between two values 
+// Math.random: return a random integer between two values
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   // the Math.ceil function returns the smallest integer greater or equal to a given number
-  // Math.ceil rounds up  
+  // Math.ceil rounds up
   max = Math.floor(max);
 
-  return Math.floor(Math.random() * (max - min)) + min; 
-  // Math.floor returns the largest integer less than or equal to a given number 
-  // It rounds a number down and returns a whole number 
+  return Math.floor(Math.random() * (max - min)) + min;
+  // Math.floor returns the largest integer less than or equal to a given number
+  // It rounds a number down and returns a whole number
   // Math.floor rounds down
 }
 
@@ -3186,4 +3186,228 @@ getRandomInt(5,10)
 // Integers: All whole numbers and thier negative counterpart (... -4, -3, -2, -1, 0, 1, 2, 3, 4)
 
 
-// Get a random integer between two values 
+// Get a random integer between two values
+
+
+//print array
+
+function printArray(array) {
+  return array;
+}
+printArray([1,2,3])
+
+// reverse a string
+
+function reverseString(string) {
+  return string.split('').reverse().join('');
+}
+
+reverseString('hello')
+
+// reverse a string with a for loop
+
+function revereString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+revereString('hello');
+
+// check if a string is a palindrome
+// a palindrome is a word that is spelled the same forwards and backwards
+
+function isPalindrome(string) {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('madam');
+
+
+// check if a string is a palindrome with a for loop
+
+function isPalidrome(string) {
+  let newString = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalidrome('madam');
+
+// repeatify
+
+function repeatify(string, number) {
+  return string.repeat(number);
+}
+
+repeatify('hello', 3)
+
+// repeatify with a for loop
+
+function repeatify(string, number) {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+// find the largest number within an array
+
+function findLargest(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (largest < array[i]) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+// find the difference
+
+function findDiffernece(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (smallest < array[i]) {
+      smallest = array[i];
+    } else if (largest > array[i]) {
+      largest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+// find the difference
+
+function findDiffernece(array) {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findDiffernece([10,12,15]);
+
+
+// twoSum
+// Write a function called twoSum that given an array of integers and a target number, returns two array integers that add up to the target.
+
+function twoSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        console.log(array[i], array[j]);
+      }
+    }
+  }
+}
+
+twoSum([1,2,3,2], 4 )
+
+
+// isPrime
+// check if a number is a prime number
+
+
+function isPrime(number) {
+  if (number === 2) {
+      return true;
+  } else if (number > 0) {
+    for (let i = 2; i < number; i++) {
+      if (number % i !== 0) {
+        return true;
+      } else if (number === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(5);
+
+
+// write an isPrime function
+
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 0) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+isPrime(5);
+
+
+// isSorted
+// Write a function to check if an array is sorted; if all of the numbers are in the correct order
+
+function isSorted(array) {
+  // loop through all of the numbers in an array
+  for (let i = 0; i < array.length; i++) {
+  // if number - 1 is greater than number then the array is not sorted
+    if (array[i - 1] > array[i]) {
+      return false;
+    }
+  }
+// else, the array is sorted.
+  return true;
+}
+
+isSorted([1,2,3,4])
+
+
+// odds/evens
+
+function oddEvens(string) {
+  let odd = '';
+  let even = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      even += string[i];
+    } else {
+      odd += string[i];
+    }
+  }
+  return `${even}, ${odd}`;
+}
+
+oddEvens('hello');
