@@ -3411,3 +3411,59 @@ function oddEvens(string) {
 }
 
 oddEvens('hello');
+
+
+// write a function that makes seven calls to console.log to out put the following triangle:
+
+#
+##
+###
+####
+#####
+######
+#######
+
+
+for (var line = "#"; line.length < 8; line += "#")
+console.log(line);
+
+// Chess Board:
+// Write a program that creates a string that represents an 8 x 8 grid, using new line characters to seperate lines.
+// At each position of the grid, there is either a space or a "#" character.
+
+
+// size is a parameter that will be passed into the function and determine the width and the height of the chessboard.
+
+var size = 8;
+
+var board = "";
+
+for (let y = 0; y < size; y++) {
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0)
+      board += " ";
+    else
+      board += "#";
+  }
+  board += "\n";
+}
+
+console.log(board);
+
+// Write a chess board function with width and height
+
+function printChessBoard(width, height) {
+ let board = " ";
+
+ for (let w = 0; w < width; w++) {
+   for (let y = 0; y < height; y++) {
+     if ((w + y) % 2 == 0)
+      board += " ";
+    else
+      board += "#";
+   }
+  board += "\n";
+ }
+}
+
+printChessBoard(8,8)
