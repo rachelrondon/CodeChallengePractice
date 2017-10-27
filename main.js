@@ -3764,3 +3764,129 @@ function twoSum(array, targetNumber) {
 }
 
 twoSum([1,2,2,3], 4)
+
+
+/* Print An Array */
+function printArray(array) {
+  return array;
+}
+
+printArray([1,2,3])
+
+/* Reverse a string */
+
+function reverseString(string) {
+  let newString = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+/* Check if a string is a palindrome */
+
+function isPalindrome(string) {
+let newString = '';
+
+for (let i = string.length - 1; i >= 0; i--) {
+  newString += string[i];
+  } if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalindrome('madam');
+
+
+/* Repeatify */
+
+function repeatify(string, number) {
+  return string.repeat(number)
+}
+
+repeatify('hello', 3)
+
+/* Repeatify with a for loop */
+
+function repeatify(string, number) {
+  let newString = '';
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 3)
+
+
+/* Find the largest difference between the numbers within an array */
+
+function findLargestDifferent(array) {
+  let smallest = array[0];
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return largest - smallest;
+}
+
+findLargestDifferent([1,2,3,4])
+
+
+/* Find the largest number in an array */
+
+function findLargestNumber(array) {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+}
+
+findLargestNumber([1,2,3,10,20,2])
+
+
+/* Odds/Evens */
+
+function oddsEvens(string) {
+  let odds = '';
+  let evens = '';
+
+for (let i = 0; i < string.length; i++) {
+  if (i % 2 === 0) {
+    evens += string[i];
+  } else {
+    odds += string[i];
+  }
+}
+return `${evens}, ${odds}`;
+}
+
+oddsEvens('hello');
+
+
+/* Simple Array Sum */
+/* Add up all of the numbers within an array */
+
+function arraySum(array) {
+let sum = 0;
+
+for (let i = 0; i < array.length; i++) {
+  sum += array[i];
+}
+return sum;
+}
+
+arraySum([1,2,3,10])
