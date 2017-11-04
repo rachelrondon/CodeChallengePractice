@@ -3879,7 +3879,6 @@ oddsEvens('hello');
 
 /* Simple Array Sum */
 /* Add up all of the numbers within an array */
-
 function arraySum(array) {
 let sum = 0;
 
@@ -3890,3 +3889,177 @@ return sum;
 }
 
 arraySum([1,2,3,10])
+
+
+/* Print an array */
+function printArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    return array;
+  }
+}
+
+printArray([1,2,3,4])
+
+
+/* Reverse a string */
+function revereString(string) {
+  return string.split('').reverse().join('');
+
+}
+
+revereString('hello')
+
+
+/* Reverse a string with a for loop */
+function reverseString(string) {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+reverseString('hello')
+
+/* Reverse a string with a for loop and ES6 */
+
+revereString = (string) => {
+  let newString = '';
+
+    for (let i = string.length -1 ; i >= 0; i--) {
+      newString += string[i];
+    }
+    return newString;
+};
+
+revereString('hello');
+
+
+/* isPalindrome */
+
+isPalidrome = (string) => {
+  let newString = '';
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  if (string === newString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalidrome('madam')
+
+
+/* isPalindrome */
+isPalidrome = (string) => {
+  if (string === string.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isPalidrome('madam')
+
+
+/* Repeatify */
+
+repeatify = (string, number) => {
+  let newString = '';
+
+  for (let i = 0; i < number; i++) {
+    newString += string;
+  }
+  return newString;
+}
+
+repeatify('hello', 4)
+
+
+/* Find the largest number within an array */
+
+findLargest = (array) => {
+  let largest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+  };
+
+  findLargest([1,2,10,4]);
+
+
+  /* Odds/Evens */
+
+  oddEven = (string) => {
+    let odd = '';
+    let even = '';
+
+    for (let i = 0; i < string.length; i++) {
+      if (i % 2 === 0) {
+        even += string[i];
+      } else {
+        odd += string[i];
+      }
+    }
+    return `${even}, ${odd}`
+}
+
+oddEven('hello')
+
+
+/* Simple array sum - calculate the sum of all of the integers within an array */
+
+
+arraySum = (array) => {
+  let sum = 0;
+
+  for (let numbers of array) {
+    sum += numbers
+  }
+  return sum;
+}
+
+arraySum([1,2,3,4,5])
+
+
+/* Another way to write this function */
+
+arraySum = (array) => {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+};
+
+arraySum([1,2,3,4]);
+
+
+/* Find the largest difference */
+
+findDifference = (array) => {
+  let largest = array[0];
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if ( array[i] > largest) {
+      largest = array[i];
+    } else if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+return largest - smallest;
+
+}
+
+findDifference([10,15,5,20])
+
